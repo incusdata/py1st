@@ -22,7 +22,7 @@ This scripts shows how we can obtain [command-line arguments][w-cli-arg] passed 
    https://docs.python.org/3/library/index.html
    "Python Docs — Standard Library Index"
 
-### [exitcode.py](./exitcode.py) — Returns Controlled Exit Code
+### [exitcode.py](./exitcode.py) — Return Exit Code
 
 An exit code, is also called an [exit status][w-exit-sts], and is an integer value returned by terminating processes (in this case, a Python script). This value can be obtained by parent [processes][w-process] (like your [command-line][w-cli] [shell][w-shell]).
 
