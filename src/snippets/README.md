@@ -1,4 +1,4 @@
-<a id="py1st-src-simple"></a>
+<a id="py1st-src-snip"></a>
 # Python First — Source Snippets
 
 Some practical code extracts that can be copied to other scripts where useful.
