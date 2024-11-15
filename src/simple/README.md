@@ -44,6 +44,6 @@ It makes use of the [**sys.exit()**][p-m-sys-exit] function from the [**sys**][p
    https://docs.python.org/3/library/sys.html?highlight=sys%20exit#sys.exit
    "Python Docs — Library / sys.exit() function"
 
-### [hiby.py](./hyby.py) — Hello and Goodbye
+### [hyby.py](./hyby.py) — Hello and Goodbye
 
 Stupid little example used to illustrate typographical conventions. Many like to add **y** in programs that are for, or written in, Python — so we comply.
