@@ -194,13 +194,13 @@ Here are a few topics and features that put Python in context and distinguish it
 
 The ‘compiled’ script name will be ‹*name*›**.pyc** inside the cache directory. These files can be safely deleted. Alternatively, you can run them like any Python script or even distribute them to clients instead of the ‹*name*›**.py** files. It will save some space, and slightly faster loading/execution. However, this is not a security measure.
 
-**STATEMENTS** — [Statements][w-statement] are terminated by a newline, also called a linefeed, character (‹NL›/‹LF›). There are situations where a statement may be continued onto a physical new line (statements spanning lines).
+**STATEMENTS** — [Statements][w-statement] are terminated by a newline, also called a linefeed, (character ‹NL›/‹LF›). There are situations where a statement may be continued onto a physical new line (statements spanning lines).
 
 Python is one of a few languages that allow ‘useless ‹*expr*›essions’ as legal statements. This is so that Python REPLs can automatically print the results of such ‹*expr*›essions. In a script, such an *expression statement* will have no effect (i.e., ‘useless’).
 
 **INDENTATION** — Leading whitespace is significant in Python. Incorrect indentation can result in syntax errors. You should pay attention when this comes up. The main reason for this syntactic choice is the Python code appears ‘cleaner’ than languages that rely on delimiters ([free-format][w-freeform] languages).
 
-**COMPREHENSIONS** — Python supports various comprehensions, which provide a concise way to create lists, tuples, or dictionaries, using a single line of code. They help make your code more readable and often require fewer lines than traditional loops.
+**COMPREHENSIONS** — Python supports various [comprehensions][py-ds-compr], which provide a concise way to create lists, tuples, or dictionaries, using a single line of code. They help make your code more readable and often require fewer lines than traditional loops.
 
 **GENERATORS** — [Generators][w-generator] are a special type of [iterator][w-iter] that allows you to create an iterable object using the [**yield**][p-st-yield] statement. They provide an efficient way to work with large datasets or infinite sequences by only generating the next item in the sequence when it's needed.
 
@@ -231,6 +231,9 @@ Python is one of a few languages that allow ‘useless ‹*expr*›essions’ as
 
 [**&#x21EA;TOP**](#python-first)
 
+[p-ds-compr]:
+   https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
+   "Python Docs — 5.Data Structures # 5.1.3 List Comprehensions"
 [w-paradigm]:
    https://en.wikipedia.org/wiki/Programming_paradigm
    "Wikipedia — Programming Paradigm"
