@@ -1,6 +1,6 @@
 # Python First — Course Scripts
 
-The scripts here are not all Python scripts, and are used on some courses.
+The scripts here are not all Python scripts, and are used on some courses. In general, scripts are run with: ‘‹*interpreter*› \ ‹*script-file*›’. So, for Python, you use: ‘**python** \ ‹*script-file*›’ on the command-line. In an IDE, you may click some **Run** button.
 
 ### [profile.ps1](./profile.ps1) — Example PowerShell Profile
 
