@@ -4,7 +4,7 @@ The scripts here are not all Python scripts, and are used on some courses. In ge
 
 ### [profile.ps1](./profile.ps1) — Example PowerShell Profile
 
-Ideally, UTF-8 should be the default encoding in PowerShell sessions on Windows. This `profile.ps1` script will set UTF-8 encoding (code page `65001` in Microsoft's terminology). Add this at the top of your [profile][ps1-profiles]. Removing the Unix-like aliases, and the `touch` function, it optional.
+Ideally, UTF-8 should be the default encoding in PowerShell sessions on Windows. This `profile.ps1` script will set UTF-8 encoding (code page `65001` in Microsoft's terminology). Add this at the top of your [profile][ps1-profiles]. Removing the Unix-like aliases, and the `touch` function, is clearly optional.
 
 You can use the following PowerShell command-line to find the location of `profile.ps1` on your computer:
 
