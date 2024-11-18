@@ -200,7 +200,7 @@ Python is one of a few languages that allow ‘useless ‹*expr*›essions’ as
 
 **INDENTATION** — Leading whitespace is significant in Python. Incorrect indentation can result in syntax errors. You should pay attention when this comes up. The main reason for this syntactic choice is the Python code appears ‘cleaner’ than languages that rely on delimiters ([free-format][w-freeform] languages).
 
-**COMPREHENSIONS** — Python supports various [comprehensions][py-ds-compr], which provide a concise way to create lists, tuples, or dictionaries, using a single line of code. They help make your code more readable and often require fewer lines than traditional loops.
+**COMPREHENSIONS** — Python supports various [comprehensions][p-ds-compr], which provide a concise way to create lists, tuples, or dictionaries, using a single line of code. They help make your code more readable and often require fewer lines than traditional loops.
 
 **GENERATORS** — [Generators][w-generator] are a special type of [iterator][w-iter] that allows you to create an iterable object using the [**yield**][p-st-yield] statement. They provide an efficient way to work with large datasets or infinite sequences by only generating the next item in the sequence when it's needed.
 
