@@ -75,7 +75,7 @@ Although not much is really *required* (no entrance exam or competency test exis
 
  * [**Command-Line Shell**][w-cli] — Unix-like command-line [shells][w-shell-cli] share common characteristics, which is not exactly replicated in the legacy [Command Prompt][w-cmd] or the portable [PowerShell 7][w-pwsh7] (also known as PowerShell Core, and not to be confused with legacy ‘Windows PowerShell’). Nevertheless, all support commands that can be performed without a mouse, including managing files and directories, editing and running Python programs (scripts).
 
- * [**Code Editor**][w-code-edit] — Although technically any text editor will do, an editor that has Python support would be better. If you have no particular preference, we suggest [Visual Studio Code][w-vscode] (**code**), which we shall call VSCode from now on. It has nothing in common with the Visual Studio IDE, apart from the name and the author.
+ * [**Code Editor**][w-code-edit] — Although technically any text editor will do, an editor that has Python support would be better. If you have no particular preference, we suggest [Visual Studio Code][w-vscode] (**code**), which we shall call VSCode from now on. It has nothing in common with the Visual Studio IDE, apart from the name and the vendor.
 
 Presumably you also realise that access to a Python [interpreter][p-dl] would be somewhat useful. You do not necessarily have to install Python to learn Python — several [online][iwp-opiair] options allow for Python code input, and showing results of computations; requiring only a browser.
 
@@ -125,7 +125,7 @@ Python is currently managed by the [Python Software Foundation][w-psf], as [open
 
 Ongoing Python [development][w-py-dev] are driven by [PEPs][peps] (Python Enhancement Proposals). Many of Python's current features and syntax (but not all) are documented in PEPs. Some PEPs are [whimsical][pep20] (though some might object to the adjective).
 
-One PEP even suggests [coding style][pep8], which is taken *very* seriously by some. The latter is the cause for the term *pythonista* as somebody who writes not only *pythonic* (idiomatic) code, but adheres to [PEP-8][pep8] and advocates it. Tools exist to check that your code adhere to PEP-8, like [**flake8**][flake8-docs] and [**pylint**][pylint-docs].
+One PEP even suggests a [coding style][pep8], which is taken *very* seriously by some. The latter is the cause for the term *pythonista* as somebody who writes not only *pythonic* (idiomatic) code, but adheres to [PEP-8][pep8] and advocates it. Tools exist to check that your code adhere to PEP-8, like [**flake8**][flake8-docs] and [**pylint**][pylint-docs].
 
 [w-psf]:
    https://en.wikipedia.org/wiki/Python_Software_Foundation
@@ -162,7 +162,7 @@ One PEP even suggests [coding style][pep8], which is taken *very* seriously by s
 
 Python 3.0, released in 2008, represented a major change from Python 2.x, which introduced several in&shy;com&shy;pat&shy;ibil&shy;ities. Python 2 is no longer supported, but can still be found ‘in the wild’. A consequence of this, is that on some Linux distributions, you may get Python 2, if you run **python**; for Python 3, you are supposed to run **python3**.
 
-This repository focuses on Python 3.10, but do mention Python 3.11 additions. All scripts require at least version 3.10, though many will run on older versions.
+This repository focuses on Python 3.10, but do mention Python 3.11 and 3.12 additions. Python 3.13 has some issues, at least on Windows. All scripts require at least version 3.10, though many will run on older versions.
 
 [idgh-py1st-wiki]:
    https://github.com/incusdata/py1st/wiki
@@ -188,7 +188,7 @@ Here are a few topics and features that put Python in context and distinguish it
 
 **KEYWORD ARGUMENTS** — Python's term for [named parameters][w-namedparm] is *keyword arguments*. When passing arguments to a function, the caller has the option to include the parameter name. An *argument* is an expression that initialises a function *parameter*.
 
-**MEMORY** — Python occasionally and automatically, ‘[collects garbage][w-garbage]’ memory that is not in use any more. To do this, it performs [reference counting][w-refcnt], which incurs overhead. This behaviour is similar to other [memory-managed][w-memmgt] languages like Java and C#. 
+**MEMORY** — Python occasionally and automatically, ‘[collects garbage][w-garbage]’ memory that is not in use any more. To do this, it performs [reference counting][w-refcnt], which incurs overhead. This behaviour is similar to other [memory-managed][w-memmgt] languages like Java and C#, in contrast to C and C++ which does not automatically manage dynamic memory.
 
 **NOT COMPILED** — Python scripts are [tokenized][w-tokenize] into a more compact form, which is a high-level type of compilation. This happens before the code is interpreted (executed). Under certain circumstance, Python may store this ‘compiled’ code in a **\_\_pycache\_\_** subdirectory, when interpreting scripts.
 
@@ -261,7 +261,7 @@ Python is one of a few languages that allow ‘useless ‹*expr*›essions’ as
 [w-refcnt]:
    https://en.wikipedia.org/wiki/Reference_counting
    "Wikipedia — Reference Counting"
-[w-memmgr]:
+[w-memmgt]:
    https://en.wikipedia.org/wiki/Memory_management
    "Wikipedia — Memory Managment"
 [w-tokenize]:
