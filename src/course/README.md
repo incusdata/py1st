@@ -1,6 +1,6 @@
 # Python First — Course Scripts
 
-The scripts here are not all Python scripts, and are used some courses.
+The scripts here are not all Python scripts, and are used on some courses.
 
 ### [profile.ps1](./profile.ps1) — Example PowerShell Profile
 
