@@ -125,7 +125,7 @@ Python is currently managed by the [Python Software Foundation][w-psf], as [open
 
 Ongoing Python [development][w-py-dev] are driven by [PEPs][peps] (Python Enhancement Proposals). Many of Python's current features and syntax (but not all) are documented in PEPs. Some PEPs are [whimsical][pep20] (though some might object to the adjective).
 
-One PEP even suggests a [coding style][pep8], which is taken *very* seriously by some. The latter is the cause for the term *pythonista* as somebody who writes not only *pythonic* (idiomatic) code, but adheres to [PEP-8][pep8] and advocates it. Tools exist to check that your code adhere to PEP-8, like [**flake8**][flake8-docs] and [**pylint**][pylint-docs].
+One PEP even suggests a [coding style][pep8], which is taken *very* seriously by some. The latter is the cause for the term *pythonista* as somebody who writes not only *pythonic* (idiomatic) code, but adheres to [PEP-8][pep8] and advocates it. Tools exist to check that your code adhere to PEP-8, like [**flake8**][flake8-docs], [**pylint**][pylint-docs] and the must newer ‘written in Rust’ [**ruff**][astral-ruff], which incidentally, can also *format* your code, and has a [Ruff VSCode Extension][vsc-x-ruff].
 
 [w-psf]:
    https://en.wikipedia.org/wiki/Python_Software_Foundation
@@ -157,7 +157,13 @@ One PEP even suggests a [coding style][pep8], which is taken *very* seriously by
 [pylint-docs]:
    https://pylint.pycqa.org/en/latest/
    "Pylint — Static Python Code Analyser Documentation"
-
+[astral-ruff]:
+   https://docs.astral.sh/ruff/
+   "Astral — Ruff documentation"
+[vsc-x-ruff]:
+   https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+   "VSCode Marketplace — Ruff Extension for Visual Studio Code"
+   
 ## [&#x21EA;](#python-first) Python Versions
 
 Python 3.0, released in 2008, represented a major change from Python 2.x, which introduced several in&shy;com&shy;pat&shy;ibil&shy;ities. Python 2 is no longer supported, but can still be found ‘in the wild’. A consequence of this, is that on some Linux distributions, you may get Python 2, if you run **python**; for Python 3, you are supposed to run **python3**.
