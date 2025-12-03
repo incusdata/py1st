@@ -168,7 +168,7 @@ One PEP even suggests a [coding style][pep8], which is taken *very* seriously by
 
 Python 3.0, released in 2008, represented a major change from Python 2.x, which introduced several in&shy;com&shy;pat&shy;ibil&shy;ities. Python 2 is no longer supported, but can still be found ‘in the wild’. A consequence of this, is that on some Linux distributions, you may get Python 2, if you run **python**; for Python 3, you are supposed to run **python3**.
 
-This repository focuses on Python 3.10, but do mention Python 3.11 and 3.12 additions. Python 3.13 has some issues, at least on Windows. All scripts require at least version 3.10, though many will run on older versions.
+This repository focuses on Python 3.10, but do mention Python 3.11 and 3.12 additions. Python 3.13 has some issues, at least on Windows. Version 3.14 is available and recommended. All scripts require at least version 3.10, though many will run on older versions.
 
 [idgh-py1st-wiki]:
    https://github.com/incusdata/py1st/wiki
