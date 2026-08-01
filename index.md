@@ -17,7 +17,7 @@ abstract: |
 
 ## About
 
-This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of this repository is represented by several chapter-size pages in the accompanying [wiki][idgh-py1st-wiki]. It receives regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
+This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of it is the chapter-size pages listed above, written as Markdown beside that code in the [repository][idgh-py1st-repo]. They receive regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
 
 You are absolutely welcome to critique, [raise issues][idgh-py1st-issues], or submit [pull requests][idgh-py1st-pulls].
 
@@ -149,9 +149,9 @@ Python 3.0, released in 2008, represented a major change from Python 2.x, which 
 
 This repository focuses on Python 3.10, but do mention Python 3.11 and 3.12 additions. Python 3.13 has some issues, at least on Windows. Version 3.14 is available and recommended. All scripts require at least version 3.10, though many will run on older versions.
 
-[idgh-py1st-wiki]:
-   https://github.com/incusdata/py1st/wiki
-   "GitHub - Incus Data / Python First / Wiki"
+[idgh-py1st-repo]:
+   https://github.com/incusdata/py1st
+   "GitHub — Incus Data / Python First"
 [w-python]:
    https://en.wikipedia.org/wiki/Python_(programming_language)
    "Wikipedia — Python (programming language)"

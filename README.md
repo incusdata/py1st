@@ -1,10 +1,10 @@
 <a id="python-first"></a>
 <div align="center" width="100%">
-<a href="http://github.com/incusdata/py1st/wiki"
-   title="GitHub - Incus Data / Python First / Wiki"
-   ><img src="./res/py1st-cut.svg?raw=true" alt="Python First Wiki"/></a>
-<!-- h1><a href="https://github.com/incusdata/py1st/wiki"
-   title="GitHub - Incus Data / Python First / Wiki">Python First</a></h1 -->
+<a href="https://incusdata.site/pan/py1st"
+   title="Incus Data — Python First"
+   ><img src="./res/py1st-cut.svg?raw=true" alt="Python First"/></a>
+<!-- h1><a href="https://incusdata.site/pan/py1st"
+   title="Incus Data — Python First">Python First</a></h1 -->
 <br/>
 
 <h3 align="center"><h3>Repository for Python Initiate Matters</h3>
@@ -28,7 +28,7 @@
 
 | &#x2757; **NOTICE** — In Process  |
 |:----------------------------------|
-| This repository and the accompanying [wiki][idgh-py1st-wiki] is not yet complete. If you clone this repository, be sure to update it regularly. |
+| This repository and the [rendered pages][idgh-py1st-site] are not yet complete. If you clone this repository, be sure to update it regularly. |
 
 [Python][w-python] is a popular [interpreted][w-interpreter] language that has found application in many areas of computing. It is a relatively simple language, and is often a first programming language for many. We like to assist in this learning process. 
 
@@ -38,7 +38,7 @@
 
 ## [&#x21EA;](#python-first) About
 
-This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of this repository is represented by several chapter-size pages in the accompanying [wiki][idgh-py1st-wiki]. It receives regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
+This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of it is several chapter-size pages, kept alongside that code as Markdown in this repository and published as [rendered pages][idgh-py1st-site]. They receive regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
 
 You are absolutely welcome to critique, [raise issues][idgh-py1st-issues], or submit [pull requests][idgh-py1st-pulls].
 
@@ -170,9 +170,9 @@ Python 3.0, released in 2008, represented a major change from Python 2.x, which 
 
 This repository focuses on Python 3.10, but do mention Python 3.11 and 3.12 additions. Python 3.13 has some issues, at least on Windows. Version 3.14 is available and recommended. All scripts require at least version 3.10, though many will run on older versions.
 
-[idgh-py1st-wiki]:
-   https://github.com/incusdata/py1st/wiki
-   "GitHub - Incus Data / Python First / Wiki"
+[idgh-py1st-site]:
+   https://incusdata.site/pan/py1st
+   "Incus Data — Python First"
 [w-python]:
    https://en.wikipedia.org/wiki/Python_(programming_language)
    "Wikipedia — Python (programming language)"
