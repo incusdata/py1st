@@ -1,6 +1,9 @@
 ---
 title: Python First
 subtitle: Repository for Python Initiate Matters
+rights: Copyright © 2026 Codi Matters
+author: Codi Matters
+license: '[![CC BY-NC 4.0](res/cc-by-nc.svg)][ccbyncsa]'
 template: landing
 page-summaries: true
 nav: false
@@ -14,6 +17,10 @@ abstract: |
 [w-interpreter]:
    https://en.wikipedia.org/wiki/Interpreter_(computing)
    "Wikipedia — Interpreter (computing)"
+[ccbyncsa]:
+   https://creativecommons.org/licenses/by-nc/4.0/
+   "Creative Commons — Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)"
+
 
 ## Requirements
 
