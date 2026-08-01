@@ -5,6 +5,11 @@
 title: Python First
 
 # Site-wide defaults. Every page inherits these unless its own front matter sets the key.
+
+# What the sticky bar says on the landing page, and where it points. Markdown, so the
+# whole thing is one value. Elsewhere the bar names the collection and links home;
+# here that would link to this very page, so it aims outward instead.
+landing-bar: '[Python First](https://py.1st.dev)'
 rights: Copyright © 2026 Codi Matters
 favicon: res/favicon.svg
 
