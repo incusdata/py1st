@@ -1,9 +1,9 @@
 <a id="python-first"></a>
 <div align="center" width="100%">
-<a href="https://incusdata.site/pan/py1st"
+<a href="https://py.1st.dev"
    title="Incus Data — Python First"
    ><img src="./res/py1st-cut.svg?raw=true" alt="Python First"/></a>
-<!-- h1><a href="https://incusdata.site/pan/py1st"
+<!-- h1><a href="https://py.1st.dev"
    title="Incus Data — Python First">Python First</a></h1 -->
 <br/>
 
@@ -171,7 +171,7 @@ Python 3.0, released in 2008, represented a major change from Python 2.x, which 
 This repository focuses on Python 3.14, but do mention Python earlier versions down to 3.10. All scripts require at least version 3.10; those that don't will mention it. But all *will* run on 3.14.
 
 [idgh-py1st-site]:
-   https://incusdata.site/pan/py1st
+   https://py.1st.dev
    "Incus Data — Python First"
 [w-python]:
    https://en.wikipedia.org/wiki/Python_(programming_language)
