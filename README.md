@@ -66,4 +66,7 @@ In short, we believe understanding the Python *language* first, is foundational.
 [w-repl]:
    https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
    "Wikipedia — Read-Eval-Print-Loop (REPL)"
+[w-python]:
+   https://en.wikipedia.org/wiki/Python_(programming_language)
+   "Wikipedia — Python (programming language)"
 
