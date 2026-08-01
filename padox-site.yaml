@@ -1,0 +1,31 @@
+# padox collection config.
+#
+# title is the collection's title, shown in the site bar. It is distinct from any page's own
+# title; --site-title overrides it.
+title: Python First
+
+# Site-wide defaults. Every page inherits these unless its own front matter sets the key.
+rights: Copyright © 2026 Codi Matters
+favicon: res/favicon.svg
+
+# pages is order *and* membership: anything not listed is not part of the collection, which is
+# why _Footer.md needs no exclusion rule here.
+#
+# Apart from Introduction.md, which is placed deliberately, the order below is what padox
+# resolves on its own without this file -- alphabetical, with the index hoisted. It is almost
+# certainly not the reading order: Control-Structures precedes Expressions, and Functions
+# precedes Literals. Reorder freely; this file is the reason the order is a decision rather
+# than a side effect of file naming.
+pages:
+  - index.md
+  - Introduction.md
+  - Interactive-Python.md
+  - Simple-Types.md
+  - Literals.md
+  - Expressions.md
+  - Control-Structures.md
+  - Functions.md
+  - Sequences.md
+  - Simple-Scripts.md
+  - Virtual-Environments.md
+  - Your-PATH.md

@@ -132,3 +132,6 @@ dmypy.json
 Session.vim
 ideas.md
 shadowtxt.svg
+.vscode
+*.html
+.padox-build
