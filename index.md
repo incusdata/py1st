@@ -15,37 +15,6 @@ abstract: |
    https://en.wikipedia.org/wiki/Interpreter_(computing)
    "Wikipedia — Interpreter (computing)"
 
-## About
-
-This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of it is the chapter-size pages listed above, written as Markdown beside that code in the [repository][idgh-py1st-repo]. They receive regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
-
-You are absolutely welcome to critique, [raise issues][idgh-py1st-issues], or submit [pull requests][idgh-py1st-pulls].
-
-[w-snippet]:
-   https://en.wikipedia.org/wiki/Snippet_(programming)
-   "Wikipedia — Snippet (Programming)"
-[idgh-py1st-src]:
-   https://github.com/incusdata/py1st/tree/main/src
-   "GitHub — Incus Data / Python First / src"
-[idgh-py1st-issues]:
-   https://github.com/incusdata/py1st/issues
-   "GitHub — Incus Data / Python First / Issues"
-[idgh-py1st-pulls]:
-   https://github.com/incusdata/py1st/pulls
-   "GitHub — Incus Data / Python First / Pull Requests"
-
-## Purpose
-
-This material is targeted at individuals willing to actively study and practice Python. The purpose is to explain all topics necessary for learners to obtain introductory Python mastery. Medium to advanced topics are also discussed, but can be safely revisited later.
-
-The initial focus is on interactive Python use in a [REPL][w-repl] (Read-Eval-Print-Loop), followed by writing scripts for command-line programs. Other applications areas of Python, like numerical, database, and web applications; receive some treatment, but is not the main point.
-
-In short, we believe understanding the Python *language* first, is foundational. With that in hand, any application area becomes mostly a matter of understanding libraries and frameworks.
-
-[w-repl]:
-   https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
-   "Wikipedia — Read-Eval-Print-Loop (REPL)"
-
 ## Requirements
 
 Although not much is really *required* (no entrance exam or competency test exists), you will simply have a better time, the more familiar you are with the following topics:
