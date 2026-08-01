@@ -28,7 +28,7 @@
 
 | &#x2757; **NOTICE** — In Process  |
 |:----------------------------------|
-| This repository and the [rendered pages][idgh-py1st-site] are not yet complete. If you clone this repository, be sure to update it regularly. |
+| This repository and the [rendered pages][py1st-site] are not yet complete. If you clone this repository, be sure to update it regularly. |
 
 [Python][w-python] is a popular [interpreted][w-interpreter] language that has found application in many areas of computing. It is a relatively simple language, and is often a first programming language for many. We like to assist in this learning process. 
 
@@ -38,7 +38,7 @@
 
 ## [&#x21EA;](#python-first) About
 
-This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of the repo consists of several chapter-size pages, kept alongside that code as Markdown in this repository and published as [rendered pages][idgh-py1st-site]. They receive regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
+This repository contains Python educational example code and snippets, under the [**src/**][idgh-py1st-src] directory. The bulk of the repo consists of several chapter-size pages, kept alongside that code as Markdown in this repository and published as [rendered pages][py1st-site]. They receive regular updates and changes, so beware of saving links to particular headings or pages — they may change at any time.
 
 You are absolutely welcome to critique, [raise issues][idgh-py1st-issues], or submit [pull requests][idgh-py1st-pulls].
 
@@ -69,4 +69,6 @@ In short, we believe understanding the Python *language* first, is foundational.
 [w-python]:
    https://en.wikipedia.org/wiki/Python_(programming_language)
    "Wikipedia — Python (programming language)"
-
+[py1st-site]:
+   https://py.1st.dev
+   "Python First Site"
