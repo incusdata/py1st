@@ -414,7 +414,7 @@ In Python, a dictionary is often used to represent a [namespace][w-namespace]. A
 
 In Python, each entry in a dictionary not only contains an identifier, but also a [reference][w-reference] to a [value]{.stx}, also known as an [object]{.stx}. And that is all. This rule has no exceptions.
 
-An identifier is effectively just a label for an [object]{.stx}. The identifier itself has not type, and is only a *temporary* label for some value. This is very unlike many other programming languages.
+An identifier is effectively just a label for an [object]{.stx}. The identifier itself has no type, and is only a *temporary* label for some value. The label can later refer to any other value. This is very unlike many other programming languages.
 
 The term *variable* is thus a bit of a misnomer in Python. It is a convenient term, but can be misinterpreted. A *variable*, i.e., some [ident]{.stx}ifier, as we have seen, is just an entry in a dictionary; all it ‘stores’, is a *reference* to some [object]{.stx}. We can change the reference, but that is all that can ‘vary’.
 
@@ -488,7 +488,6 @@ There seems to be no simple way to get a list of [built-in functions][p-fn], but
 
 :::{.cmdline prompt=">>"}
 ###### `repl` — List built-in function names
-## show built-in functions
 * `import builtins as bi, inspect as it`{.py .ws}
 * `[f for f in dir(bi) if it.isbuiltin(getattr(bi, f))]`{.py .ws}
 :::
@@ -507,6 +506,8 @@ You can, for example, get a list of [keywords][p-kwds] by entering [keywords]{.c
 ###### `repl` — Start interactive help REPL
 * help()
 :::
+
+This will enter a help REPL, with a different prompt. This indicates that normal Python statements and expressions are not allow; only help-specific keywords can be typed:
 
 :::{.cmdline prompt="help>"}
 ###### `help` — Interactive help REPL
@@ -571,7 +572,7 @@ The other parameters have default values as indicated, which means they are opti
  * `print("DEF")                   #▷ ABCDEF  ← result of last two.`{.py .ws}
 :::
 
-By default, the output ‘[file]{.cc}’ is *standard output*. Practically, this will mean your screen… unless you have changed the default using your shell's [redirection][w-redirect] or [piping][w-piping] features. This works in PowerShell on Windows as well.
+By default, the output ‘[file]{.cc}’ is *standard output*. Practically, this will mean your terminal screen… unless you have changed the default using your shell's [redirection][w-redirect] or [piping][w-piping] features. This works in PowerShell on Windows as well.
 
 The standard output file is represented by [[sys.stdout]{.cc}][p-sys.stdout]. You can change the default output ‘file’ of [[print]{.cc}][p-fn-print] by passing the ‘[file]{.cc}=[expr]{.stx}’ keyword argument. The most immediate use of this, is to write error messages your program produces to *standard error*, or [[sys.stderr]{.cc}][p-sys.stderr].
 
@@ -612,7 +613,7 @@ The keyword arguments you pass to [[print]{.cc}][p-fn-print] can appear in any o
 
 We can also perform text input using the [[input]{.cc} function][p-fn-input]. It allows for an optional *prompt* to be displayed before waiting for input. The [[input]{.cc}][p-fn-input] function returns a [[str]{.cc}][p-fn-str] result, minus a trailing newline.
 
-It is possible for [[input]{.cc}][p-fn-input] to return an empty string. When [Ctrl-D]{.kbd} is pressed (or [Ctrl-Z]{.kbd}[CR]{.kbd} on Windows), it signals end-of-file, and an exception will be raised.
+It is possible for [[input]{.cc}][p-fn-input] to return an empty string. When [Ctrl-D]{.kbd} is pressed (or [Ctrl-Z]{.kbd}[CR]{.kbd} on Windows), it signals end-of-file ([EOF]{.chr}), and an [[EOFError]{.cc}][p-e-eof] exception will be raised.
 
 :::{.cmdline prompt='>>'}
 ###### `repl` — Text input
@@ -623,7 +624,7 @@ It is possible for [[input]{.cc}][p-fn-input] to return an empty string. When [C
  * `print(f"You entered: {name}")    #← use input.`{.py .ws}
 :::
 
-You do not always need text input; sometimes you want the user to enter, for example, an [[int]{.cc}][p-fn-int]eger value. So, if the user enters [123]{.cc}, [[input]{.cc}][p-fn-input] will return a [[str]{.cc}][p-fn-str] value: ["123"]{.cc}. It *looks* like a number, but in the computer, it is just a sequence of characters — we cannot perform arithmetic on strings.
+You do not always need text input; sometimes you want the user to enter, for example, an [[int]{.cc}][p-fn-int]eger value. So, if the user enters [123]{.cc}, [[input]{.cc}][p-fn-input] will return a [[str]{.cc}][p-fn-str] value: ["123"]{.cc}. It *looks* like a number, but in the computer, it is just a sequence of characters — we cannot perform general arithmetic on strings.
 
 Strings that ‘look like’ integers can be converted to strings using [[int]{.cc}][p-fn-int]. When the string does *not* ‘look like’ an integer, [[int]{.cc}][p-fn-int] will raise a [ValueError]{.cc} exception. Which means you have to ‘handle’ the exception, otherwise your program will crash immediately.
 
@@ -657,3 +658,6 @@ If you need to input a floating point value, substitute [[int]{.cc}][p-fn-int] a
 [p-fn-float]:
    https://docs.python.org/3/library/stdtypes.html#float
    "Python Built-In Functions — float()"
+[p-e-eof]:
+   https://docs.python.org/3/library/exceptions.html#EOFError
+   "Python Built-In Exceptions — EOFError"

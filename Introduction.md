@@ -12,7 +12,7 @@ title: Introduction
    https://github.com/incusdata/py1st#python-first
    "GitHub — Incus Data / Python First"
 
-<!--&#x1F40D;&#x0031;&#xFE0F;&#x20E3; (&#x1F947;)-->
+<!-- &#x1F40D;&#x0031;&#xFE0F;&#x20E3; (&#x1F947;) -->
 
 | &#x23FA; **LICENSE** — *Wiki Content* |
 |:------------------------------------|
@@ -141,7 +141,7 @@ From the command-line, at minimum, you should be able to:
 
 For a smooth experience and maximum pleasure, may we recommend at minimum a 256-colour [terminal emulator][w-term-emu], e.g., [**xterm**][w-xterm], [GNOME Terminal][w-gnome-term], [Konsole][w-konsole]; or third party. Modern examples include [iTerm2][iterm] (macOS only), [WezTerm][wezterm], [Kitty][kitty], [Alacritty][critty], and more.
 
-On Windows, you will be well-served by [Windows Terminal][w-wt] (**wt.exe**), though there are perfectly capable, and arguably better, third party terminal emulators available. The venerable [PuTTY][putty] is still viable; plus WezTerm & Alacritty also run on Windows. The Windows Console (given relatively recent improvements) may work, but is not optimal.
+On Windows, you will be well-served by [Windows Terminal][w-wt] (**wt.exe**), though there are perfectly capable, and arguably better, third party terminal emulators available. The venerable [PuTTY][putty] is still viable; plus: WezTerm & Alacritty also run on Windows. The Windows Console (given relatively recent improvements) may work, but is not optimal.
 
 [w-term-emu]:
    https://en.wikipedia.org/wiki/Terminal_emulator
@@ -188,7 +188,7 @@ We use some arguably ‘unusual’ conventions and Unicode characters.
 
 ## Typographical Conventions
 
-Syntax elements are enclosed in single left & right angle quotation marks: […]{.stx} (U+2039 & U+203A). As an example: [ident]{.stx} is a syntax specifier that means *identifier* or *name*, and [expr]{.stx} means *expression*. With that in hand, we can generalise the definition of a variable in Python:
+Syntax elements are enclosed in single left & right angle quotation marks (French *guillemets*): […]{.stx} (U+2039 & U+203A). As an example: [ident]{.stx} is a syntax specifier that means *identifier* or *name*, and [expr]{.stx} means *expression*. With that in hand, we can generalise the definition of a variable in Python:
 
 &nbsp;&nbsp;&nbsp;&nbsp; [ident]{.stx} `=` [expr]{.stx}
 
@@ -223,7 +223,7 @@ print("Hello, World!")
 print("Goodbye.")
 ```
 
-Code snippets (partial code), will not have a shebang line. If a code extract represents lines that belongs to a larger body of code, then we will indicate that with `···`.
+Code snippets (partial code), will not have a shebang line. If a code extract represents lines that belong to a larger body of code, then we will indicate that with `···`.
 
 ###### `py` — First print statement {.snip}
 ```{.py}
@@ -238,7 +238,7 @@ print("Hello, World!")                #← from `hyby.py`(4).
 
 ## Interactive Conventions
 
-Interactive examples in a Python [REPL][w-repl] (Read-Eval-Print-Loop), will appear in a code block, with the prompt indicated by ‘`>>`’; while continuation line prompts will start with ‘`··`’. Output will shown either in a comment if there is space on the same line causing the output ‘`#▷…`’, or on the following line or lines.
+Interactive examples in a Python [REPL][w-repl] (Read-Eval-Print-Loop), will appear in a code block, with the prompt indicated by ‘`>>`’; while continuation line prompts will start with ‘`··`’. Output will be shown either in a comment if there is space on the same line causing the output ‘`#▷…`’, or on the following line or lines.
 
 :::{.cmdline prompt='>>'}
 ###### `python` — *Python REPL example*
@@ -271,7 +271,7 @@ In examples involving operating system shells, the prompt will be indicated with
 
 ### Types & Classes
 
-A [type]{.stx} is a kind of classification or attribute applied to data **values** (also called *objects*). A type is like a *plan* of a house — it is not a house, but defines the *characteristics* of a house (like area, volume, number of rooms). A house build from the plan, would then exhibit these specified characteristics.
+A [type]{.stx} is a kind of classification or attribute applied to data **values** (also called *objects*). A type is like a *plan* of a house — it is not a house, but defines the *characteristics* of a house (like area, volume, number of rooms). A house **build** from the plan, would then exhibit these specified characteristics concretely.
 
 In a programming language, the type of an [expression](#expressions) determines the storage space allocated to the value, and the operations that can be performed with that value (or *object*).
 
@@ -285,7 +285,7 @@ The type of an object therefore defines what operations you can perform on it, a
 
 ### Expressions
 
-An [[expr]{.stx}ession][w-expr] is a formal term that informally means ‘anything that represents a value’. This means a [literal][w-literal] like `123` is an expression. An [ident]{.stx}ifier that represents a value, (which is sometimes called a [var]{.stx}*iable*), is thus also an expression. Below, `ident` is an [ident]{.stx}ifier (or label) that references the result of the [expr]{.stx}ession: `123 + 234`.
+An [[expr]{.stx}ession][w-expr] is a formal term that informally means ‘anything that represents a value’. This means a [literal][w-literal] like [123]{.cc} is an expression. An [ident]{.stx}ifier that represents a value, (which is sometimes called a [var]{.stx}*iable*), is thus also an expression. Below, [ident]{.cc} is an [ident]{.stx}ifier (or label) that references the result of the [expr]{.stx}ession: [123 + 234]{.cc}.
 
 ```py
 ident = 123 + 234
@@ -300,7 +300,7 @@ What is just as important to understand, is that: every expression has a [value]
 `      `{.ws}[expr]{.stx} &nbsp; [v]{.tra} &nbsp; [value]{.stx}\
 `      `{.ws}[expr]{.stx} &nbsp; [t]{.tra} &nbsp; [type]{.stx}
 
-Think of an expression always having these two attributes. For example, the Python expression:
+Think of an expression always having these two attributes. For example, the result (final value) of the Python expression:
 
 `     2 + 3 * 5`{.py .ws}
 
@@ -336,7 +336,7 @@ See [**Expressions**](./Expressions.md) for a more in-depth coverage of expressi
 
 ### Literals
 
-[Literals][w-literal] are explicit constant values having a particular notation as defined by the language. For example: [123]{.cc} is a [decimal][w-decimal] integer literal. The default notation is *decimal*, since we find that convenient as human beings. It is in an *integer*, because a decimal point is missing. It is a *literal*, because its value is apparent and constant.
+[Literals][w-literal] are explicit constant values having a particular notation as defined by the language. For example: [123]{.cc} is a [decimal][w-decimal] integer literal. The default notation is *decimal* (base 10), since we find that convenient as human beings. It is in an *integer*, because a decimal point is missing. It is a *literal*, because its value is apparent and constant.
 
 Python has decided that this particular literal, has [type]{.stx}: [[int]{.cc}][p-fn-int]. You can verify this by using the [[type()]{.cc}][p-fn-type] built-in function (which is also a [type]{.stx}):
 
@@ -345,7 +345,7 @@ Python has decided that this particular literal, has [type]{.stx}: [[int]{.cc}][
   * class int
 :::
 
-Ignore the `class` part (all types are classes, so writing that is redundant, but technically correct). In IPython, the result will simply be `int`, which is what we care about.
+Ignore the [class]{.cc} part (all types are classes, so writing that is redundant, but technically correct). In IPython, the result will simply be [int]{.cc}, which is what we really care about.
 
 [p-fn-type]:
    https://docs.python.org/3/library/functions.html#type
