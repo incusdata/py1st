@@ -1,7 +1,7 @@
 ---
 title: Interactive Python
 abstract: |
-   A quick way to start with Python, is to use it interactively. This means, using it in some form of [REPL][w-repl] (Read Eval Print Loop). In such an environment, the values of expressions are printed automatically, making it useful as a calculator. The only downside is that your input and results are lost when you exit this environment. 
+   A quick way to start with Python, is to use it interactively. This means, using it in some form of [REPL][w-repl] (Read Eval Print Loop). In such an environment, the values of expressions are printed automatically, making it useful as a calculator. The main downside is that your input and results are lost when you exit this environment. 
 ---
 
 [w-repl]:
@@ -14,7 +14,7 @@ First choice to make, is which of many Python [REPL][w-repl]s to use. You can st
 
 To keep things simple, we shall [first](#cpython-repl) consider the ‘stock’ standard CPython command-line REPL running in a [terminal emulator][w-term-emu] or the [Windows Console][w-conhost], though the stock [IDLE][w-idle] graphical console has a ‘nicer’ interface, but is not always installed. And [later](#ipython-repl), the [IPython][w-ipython] REPL, which is a more productive and friendlier REPL. It too, has a GUI console counterpart, called [[qtconsole]{.cc}][pypi-qtconsole].
 
-From this point, we assume that the **python** and/or **python3** executable is on [your PATH][idgh-py1st-wiki-path] by your own actions, or that you have activated a [virtual environment][idgh-py1st-wiki-venv], which will ensure **python** is on your PATH.
+From this point, we assume that the **python** and/or **python3** executable is on [your PATH][idgh-py1st-wiki-path] by your own actions, or that you have activated a [virtual environment][idgh-py1st-wiki-venv], which will ensure [python]{.cc} is on your PATH.
 
 [idgh-py1st-wiki-path]:
    Your-PATH.md
@@ -96,11 +96,19 @@ You can now type [exit()]{.cc}[CR]{.kbd} to terminate the Python REPL — we hav
 
 ## IPython REPL
 
-A much friendlier Python REPL can be found by way of [IPython][w-ipython]. This requires the [[ipython]{.cc} package][pypi-ipython] to be installed with [[pip]{.cc}][pypi-pip], preferably in a [virtual environment][idgh-py1st-wiki-venv]. 
+A much friendlier Python REPL can be found by way of [IPython][w-ipython]. This requires the [[ipython]{.cc} package][pypi-ipython] to be installed with [[pip]{.cc}][pypi-pip], preferably in a [virtual environment][idgh-py1st-wiki-venv]. Assuming you have a virtual enviroment called [py314]{.cc} in [~/work/py314]{.cc}, first *activate* the environment, if you have not already.
 
 :::{.cmdline}
- * **pip** install ipython
- * **ipython**
+ * ``. ~/work/py314/activate            # Non-Windows``{.sh .ws}
+ * ``~/work/py314/Scripts/Activate.ps1  # PowerShell``{.ps1 .ws}
+ * **``pip``** ``install ipython``{.sh .ws}
+ * **``ipython``{.sh .ws}**
+:::
+
+If you have [uv]{.cc} installed, and created your virtual environment with [uv venv ~/work/py314]{.cc}, you activate it the same way, but install with:
+
+:::{.cmdline}
+ * **``uv``** pip ``install ipython``{.sh .ws}
 :::
 
 This will provide you with an [ipython]{.cc} executable [command]{.stx}, which should be [on your `PATH`][idgh-py1st-wiki-path]. Running the [ipython]{.cc} command, will result in something like this:
@@ -122,7 +130,7 @@ Out[1]: 17
 In [2]: ▄
 ```
 
-You can refer to previous output with `_N` where `N` is the number in `Out[N]`. So, if we continue from above:
+You can refer to previous output with [_N]{.cc} where [N]{.cc} is the number in [Out\[N\]]{.cc}. So, if we continue from above:
 
 ```
 In [2]: _1 * 3
@@ -130,7 +138,7 @@ Out[2]: 51
 
 In [3]: ▄
 ```
-s prior to 3.14
+
 The [_1]{.cc} is replaced with the result of [Out\[1\]]{.cc}, which was [17]{.cc}, and multiplied by [3]{.cc}, gives [51]{.cc} (which later can be referred to as [_2]{.cc}).
 
 To exit the IPython REPL, you can press [Ctrl+D]{.kbd} on both Unix-like and Windows environments; or you can type [exit]{.cc}[CR]{.kbd} — no need for parentheses to follow [exit]{.cc} as in versions of Python REPLs prior to 3.14.
@@ -199,7 +207,7 @@ After editing a statement in the editor opened with **%edit**, once the temporar
 
 IPython also allows you to use: ‘[%edit]{.cc} [file]{.stx}.py’ to edit a Python source file. It will automatically run the source file after you exited from the editor. You can explicitly use ‘[%run]{.cc} [file]{.stx}’ or ‘[%run]{.cc} [file]{.stx}.py’ to run any Python script in the current directory.
 
-You can run external [command]{.stx}s in IPython with ‘**!**[command]{.stx}’. You can even pass arguments to the [command]{.stx}.
+You can run external shell [command]{.stx}s in IPython with ‘**!**[command]{.stx}’. You can even pass arguments to the [command]{.stx}.
 
 # Basic Statements
 
@@ -225,7 +233,7 @@ You can explicitly continue a statement on the following line by ending a line w
 Between paired delimiters, excluding single and double quotes, you can continue a statement without an explicit continuation backslash. The following statement is split across three lines, producing the same output as the example above. We can even add comments:
 
 :::{.cmdline prompt='>>'}
-##### `repl` — Delimiter statement continuation
+###### `repl` — Delimiter statement continuation
  * ``print(                    #← first line of statement.``{.py .ws}\
    ``"ABCDEFGHI"               #← second line of statement.``{.py .ws}\
    ``)                         #← last line of statement.``{.py .ws}
@@ -357,7 +365,50 @@ We strongly recommend you use these augmented assignment statements, since they 
 
 # Identifiers
 
-Formally, we call the names of ‘things’, [identifiers][w-ident]. Anything with a name, must follow identifier [naming rules][p-ref-ident]. Simplified: an [iden]{.stx}ifier must start with an alphabetic character, following which, more alphabetic characters, decimal digits, and underscores can follow, to arbitrary length.
+Formally, we call the names of ‘things’, [identifiers][w-ident]. Anything with a name, must follow identifier [naming rules][p-ref-ident]. Simplified: an [iden]{.stx}ifier must start with an alphabetic character, after which, more alphabetic characters, decimal digits, and underscores can follow, to arbitrary length. There are special situations where we start indentifiers with one or two underscores (&hairsp;[_]{.cc}&hairsp;), but that is only in advanced situations.
+
+<!--TODO: Once implemented, enable this, and remove the alternative below
+`     `{.ws}[ident]{.stx} []{.dra} [alpha-char]{.stx}[ [alpha-char]{.stx}[]{.alt}[digit]{.stx}[] ]{.opt}{.zom}
+-->
+
+`     `{.ws}[ident]{.stx} []{.dra} [alpha-char]{.stx}[ [alpha-char]{.stx}[]{.alt}[digit]{.stx} ]~*~
+
+The above means: An *identifier* is defined in terms of an alphabetic character, followed by zero or more of either another alphabetic character, or a decimal digit. It cannot start with a digit.
+
+An additional identifier naming rule states that it cannot be a [keyword](#keywords). See below.
+
+<!--TODO: Remove this experiment:-->
+`     `{.ws}[ [extern]{.cc .def} []{.alt} [void]{.cc} ]{.opt} [ident]{.stx} [(]{.cc} [ [parm-list]{.stx} []{.alt} [void]{.cc} ]{.opt} [)]{.cc}
+
+`     `{.ws}[ [extern]{.cc .def} []{.alt} [void]{.cc} ] [ident]{.stx} [(]{.cc} [ [parm-list]{.stx} []{.alt} [void]{.cc} ] [)]{.cc}
+
+## Keywords
+
+Keywords, also called [reserved words][w-keyword] cannot be used as identifiers. They can only be used for their intend purpose. Python does not have too many keywords
+
+:::{.admon .warning}
+***Renaming Built-In Functions***
+
+Unlike keywords, you *can* change the meaning of built-in function names. Even though it is syntactically legal, you should **never**, **ever**, do that. Linters like [pylint]{.cc} will warn you when you do, so pay attention.
+:::
+
+For completeness, here is a list of the Python 3.14 keywords, as produced by the output of [help('keywords')]{.cc} in the Python REPL:
+
+```{.output}
+False    class      from       or
+None     continue   global     pass
+True     def        if         raise
+and      del        import     return
+as       elif       in         try
+assert   else       is         while
+async    except     lambda     with
+await    finally    nonlocal   yield
+break    for        not
+```
+
+[w-keyword]:
+   https://en.wikipedia.org/wiki/Reserved_word
+   "Wikipedia — Reserved Word (keyword)"
 
 ## Dictionaries
 
@@ -489,8 +540,10 @@ There seems to be no simple way to get a list of [built-in functions][p-fn], but
 :::{.cmdline prompt=">>"}
 ###### `repl` — List built-in function names
 * `import builtins as bi, inspect as it`{.py .ws}
-* `[f for f in dir(bi) if it.isbuiltin(getattr(bi, f))]`{.py .ws}
+* `[f for f in dir(bi) if it.isbuiltin(getattr(bi, f))] #(1)`{.py .ws}
 :::
+ 
+ 1) The above does not output the names of *type functions*, for some reason.
 
 [p-fn]:
    https://docs.python.org/3/library/functions.html
@@ -498,16 +551,15 @@ There seems to be no simple way to get a list of [built-in functions][p-fn], but
 
 ## Interactive Help
  
-When calling [[help()]{.cc}][p-fn-help] Without an [arg]{.stx}ument, you will enter interactive help, which will display a message with some suggestions. The prompt will change to indicate that your are now inside an interactive help REPL. Type [quit]{.cc} to exit the interactive help, or press [Ctrl-D]{.kbd}.
-
-You can, for example, get a list of [keywords][p-kwds] by entering [keywords]{.cc}[CR]{.kbd}. Any of the example above you can enter as: ‘[command]{.stx}[CR]{.kbd}’:
+When calling [[help()]{.cc}][p-fn-help] without an [arg]{.stx}ument, you will enter interactive help, which will display a message with some suggestions. The prompt will change to indicate that your are now inside an interactive help REPL. Type [quit]{.cc} to exit the interactive help, or press [Ctrl-D]{.kbd}.
 
 :::{.cmdline prompt=">>"}
 ###### `repl` — Start interactive help REPL
 * help()
 :::
 
-This will enter a help REPL, with a different prompt. This indicates that normal Python statements and expressions are not allow; only help-specific keywords can be typed:
+This will enter a help REPL, with a different prompt. This indicates that normal Python statements and expressions are not allow; only help-specific keywords can be typed. You can, for example, get a list of [keywords][p-kwds] by entering [keywords]{.cc}[CR]{.kbd}. Any of the example above you can enter as: ‘[command]{.stx}[CR]{.kbd}’:
+
 
 :::{.cmdline prompt="help>"}
 ###### `help` — Interactive help REPL

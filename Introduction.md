@@ -342,7 +342,7 @@ Python has decided that this particular literal, has [type]{.stx}: [[int]{.cc}][
 
 :::{.cmdline prompt='>>'}
 * `print( type(123) )`{.py}
-  * class int
+  * \<class 'int'\>
 :::
 
 Ignore the [class]{.cc} part (all types are classes, so writing that is redundant, but technically correct). In IPython, the result will simply be [int]{.cc}, which is what we really care about.
