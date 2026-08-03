@@ -3,7 +3,7 @@ title: Introduction
 ---
 
 [![Python logo](res/w-py-ico.svg){height=1.15em}](https://python.org "CPython Home Page")
-[Python First](https://github.com/incusdata/py1st#python-first "GitHub — Incus Data / Python First") Wiki contains pages covering important Python topics. The order they could be read, depends on you requirements — each page is roughly chapter length. Towards the end of many pages, more advanced material may be discussed. Beginners can safely ignore advanced material in the short term — the content can be revisited when appropriate.
+[Python First](https://py.1st.dev "Python First Site") contains pages covering important Python topics. The order they could be read, depends on you requirements — each page is roughly chapter length. Towards the end of many pages, more advanced material may be discussed. Beginners can safely ignore advanced material in the short term — the content can be revisited when appropriate.
 
 [idgh-pylogo-svg]:
    res/w-py-ico.svg
@@ -14,26 +14,16 @@ title: Introduction
 
 <!-- &#x1F40D;&#x0031;&#xFE0F;&#x20E3; (&#x1F947;) -->
 
-| &#x23FA; **LICENSE** — *Wiki Content* |
-|:------------------------------------|
-| The contents of this wiki, including images (unless otherwise stated), is licensed under the Creative Commons Attribution-NonCommercial 4.0 International ([CC BY-NC 4.0][ccbyncsa]) license. All source code, example snippets, and programs alike, excluding image sources, are licensed under the MIT No Attribution ([MIT-0][lic-mitzero]) license.
-
-[ccbyncsa]:
-   https://creativecommons.org/licenses/by-nc/4.0/
-   "Creative Commons — Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)"
-[lic-mitzero]:
-   https://opensource.org/license/mit-0/
-   "Open Source Initiative — MIT No Attribution License"
 
 # Things First
 
-This wiki and associated [repository][idgh-py1st] contains several pages covering topics deemed appropriate for an introduction to the [Python 3][w-python] scripting language. Example [Python 3.14][p-v314] and [later][p-v315] code, will mostly be in the repository, while the wiki pages will contain references to them, and sometimes code extracts.
+This site and associated [repository][idgh-py1st] contains several pages covering topics deemed appropriate for an introduction to the [Python 3][w-python] scripting language. Example [Python 3.14][p-v314] and [later][p-v315] code, will mostly be in the repository, while the wiki pages will contain references to them, and sometimes code extracts.
 
 ## Focus 
 
 The primary focus of all this material, is Python language mastery, and writing *scripts*. No particular applications of Python are covered in any great depth. Python has its tail in too many pies to do them justice.
 
-This wiki provides information for beginners to intermediate Python learners. 
+This wiki provides information for beginners to intermediate Python learners, willing to build foundational knowledge and acquire appropriate terminology mastery.
 
 [w-python]:
    https://en.wikipedia.org/wiki/Python_(programming_language)
@@ -80,7 +70,7 @@ To learn and use the [Python][w-python] language, a Python interpreter has to be
 
 ### Editor
 
-Although any text editor will do, you should probably use a [code editor][w-code-editor]. If you have no particular preference, just use [VSCode][w-vscode]; it is [free][ms-vscode-dl] and has [good support][ms-vscode-python] for Python. Make sure **code** (the VSCode executable) is on [your PATH][py1st-w-path-path], for an easier life.
+Although any text editor will do, you should probably use a [code editor][w-code-editor]. If you have no particular preference, just use [VSCode][w-vscode]; it is [free][ms-vscode-dl] and has [good support][ms-vscode-python] for Python. Make sure **code** (the VSCode executable) is on [your PATH][py1st-w-path-path], to avoid frustration. 
 
 If you are using GitHub's [Codespaces][gh-codespaces], you can run VSCode in the browser, if you feel so inclined. Their ‘blank’ template has Python as well as a number of common third party packages installed, including [IPython][w-ipython].
 
@@ -232,6 +222,8 @@ print("Hello, World!")                #← from `hyby.py`(4).
 ···
 ```
 
+Be sure to note that complete scripts have a script *name* and description, while code snippets have language designator, e.g [py]{.cc}, and description, as above.
+
 [src-simple-hyby.py]:
    src/simple/hyby.py
    "GitHub — Incus Data / Python First / Simple / hyby.py"
@@ -241,7 +233,7 @@ print("Hello, World!")                #← from `hyby.py`(4).
 Interactive examples in a Python [REPL][w-repl] (Read-Eval-Print-Loop), will appear in a code block, with the prompt indicated by ‘`>>`’; while continuation line prompts will start with ‘`··`’. Output will be shown either in a comment if there is space on the same line causing the output ‘`#▷…`’, or on the following line or lines.
 
 :::{.cmdline prompt='>>'}
-###### `python` — *Python REPL example*
+###### `repl` — *Python REPL example*
  * `print("Hello, World!")`{.py .ws}
 [Hello, World!]{.output}
  * `print(                 #← incomplete statement`{.py .ws}
@@ -255,7 +247,7 @@ World!
 In examples involving operating system shells, the prompt will be indicated with `$>`. The rest of the conventions are from above. Where appropriate, we will indicate whether a Linux shell or PowerShell is used with: `sh` or `pwsh` respectively; when command-lines are the same in both type of shells, we will not mention anything. For Command Prompt, we will use `cmd`.
 
 :::{.cmdline prompt='$>'}
-###### `command-line` — Example command-lines for major shells
+###### `cli` — Example command-lines for major shells
 `#━ sh (any POSIX shell like bash or zsh)`{.sh}
 
 * `echo $PATH | tr ':' '\n'`{.sh}
@@ -270,7 +262,11 @@ In examples involving operating system shells, the prompt will be indicated with
 * `for %P in ("%PATH:;=";"%") do @echo %~P`{.bat}
 :::
 
+CLI means Command-Line Interface. All shells are CLIs. So is the Python REPL.
+
 # Terminology
+
+It is very important to be aware of correct terminology around all aspects of Python. It will even help you communicate better with your LLM of choice, for superior results.
 
 ### Types & Classes
 

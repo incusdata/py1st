@@ -21,6 +21,16 @@ abstract: |
    https://creativecommons.org/licenses/by-nc/4.0/
    "Creative Commons — Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)"
 
+| &#x23FA; **LICENSE** — *Site Content* |
+|:------------------------------------|
+| The contents of this wiki, including images (unless otherwise stated), is licensed under the Creative Commons Attribution-NonCommercial 4.0 International ([CC BY-NC 4.0][ccbyncsa]) license. All source code, example snippets, and programs alike, excluding image sources, are licensed under the MIT No Attribution ([MIT-0][lic-mitzero]) license.
+
+[ccbyncsa]:
+   https://creativecommons.org/licenses/by-nc/4.0/
+   "Creative Commons — Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)"
+[lic-mitzero]:
+   https://opensource.org/license/mit-0/
+   "Open Source Initiative — MIT No Attribution License"
 
 ## Requirements
 
