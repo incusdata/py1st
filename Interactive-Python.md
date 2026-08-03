@@ -56,7 +56,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 The first line will give you some information about the version of Python installed, and for which operating system it has been compiled. That can vary, so focus on the `3.14.…` part, which is the most important and says we are running Python 3.14. If yours says `3.15.…`, that is fine as well; if older that `3.10`, you have a problem.
 
-The `>>>` part is called a *prompt*, which indicates that Python is ready for the ‘read’ part of REPL. The `▄` shows the position of your cursor. Whatever you type now, must be legal Python syntax, but it is good to see what Python will do if you type something like `hello` (which is not valid):
+The `>>>` part is called a *prompt*, which indicates that Python is ready for the ‘read’ part of REPL. The `▄` shows the position of your cursor. Whatever you type now, must be legal Python syntax, but it is good to see what Python will do if you type something like [hello]{.cc} (which is not valid):
 
 :::{.cmdline prompt='>>'}
  * hello
@@ -107,7 +107,7 @@ A much friendlier Python REPL can be found by way of [IPython][w-ipython]. This 
  * **``ipython``{.sh .ws}**
 :::
 
-If you have [uv]{.cc} installed, and created your virtual environment with [uv venv ~/work/py314]{.cc}, you activate it the same way, but install with:
+If you have [uv]{.cc} installed, and created your virtual environment with [uv venv ~/work/py314]{.cc}, you activate it the same way, but install IPython with:
 
 :::{.cmdline}
  * **``uv``** pip ``install ipython``{.sh .ws}
@@ -189,7 +189,7 @@ You can paste text in many terminal emulators, commonly with [Shift-Ctrl-V]{.kbd
 
 When you press the cursor [Up]{.kbd} key, you will have an opportunity to edit and re-evaluate a previous statement. The more you press [Up]{.kbd}, the older the statements in your command-line history will appear. You can edit any. The cursor [Down]{.kbd} key, will show more recent statements. Pressing [CR]{.kbd} on any historical statement, even after editing it, will cause Python to re-evaluate that statement.
 
-IPython will persist your history in a file; so when you load IPython tomorrow, you can still access old statements. The number of line of history saved, is [configurable][ipy-config].
+IPython will persist your history in a file; so when you load IPython tomorrow, you can still access old statements. The number of lines of history saved, is [configurable][ipy-config].
 
 [ipy-config]:
    https://ipython.readthedocs.io/en/stable/config/intro.html
@@ -384,7 +384,7 @@ Keywords, also called [reserved words][w-keyword] cannot be used as identifiers.
 
 :::{.admon .warning}
 ###### Changing Built-In Functions
-Unlike keywords, you *can* change the meaning of built-in function names (the object they refer to). Even though it is syntactically legal, you should **never**, **ever**, do that. Linters like [pylint]{.cc} will warn you when you do, so pay attention.
+Unlike keywords, you *can* change the meaning of built-in function names (the objects they refer to). Even though it is syntactically legal, you should **never**, **ever**, do that. Linters like [pylint]{.cc} will warn you when you do, so pay attention.
 :::
 
 For completeness, here is a list of the Python 3.14 keywords, as produced by the output of [help('keywords')]{.cc} in the Python REPL:
@@ -432,8 +432,7 @@ In the short term, ignore all names starting with double underscores that may be
 The last statement tries to emphasise the fact that all names are stored in a dictionary. Python just provide some automatic name lookups, that is why ‘[print( X )]{.cc}’ produces the same result as the more inconvenient: ‘[print( globals()['X'] )]{.cc}’.
 
 :::{.admon .note}
-**Namespaces & Scopes**
-
+###### Namespaces & Scopes
 In Python, a dictionary is often used to represent a [namespace][w-namespace]. A dictionary is a mapping from keys (like names), to corresponding values (objects). Different dictionaries can represent different namespaces and since dictionaries can contain other dictionaries as values, it is possible to represent nested namespaces. This is how all [scopes][w-scope] work in Python.
 :::
 
