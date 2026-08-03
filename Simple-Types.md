@@ -32,7 +32,7 @@ This does not mean you have to become an object-oriented programmer first to lea
 
 However, you can think of a class as being analogous to a house *plan*. A physical house does not exist, but we can learn much about a future house **build** from the plan. We can build or ‘instantiate’ several houses from the same plan. We can say that these physical house objects are *instances* of the house plan.
 
-House plan **B** can borrow or [inherit][w-inherit] from some other house plan **A**, and *extend* the borrowed plan by, for example, adding an extension or extra room. A **B**-type house, will have characteristics common to houses build from an **A**-type plan.
+House plan [B]{.cc} can borrow or [inherit][w-inherit] from some other house plan [A]{.cc}, and *extend* the borrowed plan by, for example, adding an extension or extra room. A [B]{.cc}-type house then, will have characteristics common to houses build from an [A]{.cc}-type plan, plus additions.
 
 [w-class]:
    https://en.wikipedia.org/wiki/Class_(computer_programming)
@@ -76,9 +76,9 @@ We use the ‘dot operator (&hairsp;[.]{.cc}&hairsp;)’, which some other langu
 [^note1]:
    Technically, its not a ‘real’ operator — it just *acts* like one.
 
-`     `{.ws}[obj]{.stx} [.]{.cc} [method]{.stx} [( )]{.cc}\
-`     `{.ws}[obj]{.stx} [.]{.cc} [method]{.stx} [(]{.cc} [arg]{.stx} [)]{.cc}\
-`     `{.ws}[obj]{.stx} [.]{.cc} [method]{.stx} [(]{.cc} [arg₁]{.stx} [,]{.cc} [arg₂]{.stx}, … [arg<sub>n</sub>]{.stx} [)]{.cc}
+[3]{.ws}[obj]{.stx} [.]{.cc} [method]{.stx} [( )]{.cc}\
+[3]{.ws}[obj]{.stx} [.]{.cc} [method]{.stx} [(]{.cc} [arg]{.stx} [)]{.cc}\
+[3]{.ws}[obj]{.stx} [.]{.cc} [method]{.stx} [(]{.cc} [arg₁]{.stx} [,]{.cc} [arg₂]{.stx}, … [arg<sub>n</sub>]{.stx} [)]{.cc}
 
 In the example Python code below, [123]{.cc} is an object of type [[int]{.cc}][p-fn-int]. The [[int]{.cc}][p-fn-int] class defines methods like [[bit_length()]{.cc}][p-tp-int-bitlen], which we can thus call ‘on the object [123]{.cc}’. We need parentheses around the [123]{.cc}, otherwise the dot operator will be confused with the decimal point. If we associated a name like [var]{.cc} to [123]{.cc}, the parentheses will not be needed.
 
@@ -92,13 +92,13 @@ In the example Python code below, [123]{.cc} is an object of type [[int]{.cc}][p
 
 We can document the fact that [[int]{.cc}][p-fn-int] objects have a [[bit_length()]{.cc}][p-tp-int-bitlen] method like this, where [int]{.stx} means ‘an object of type [[int]{.cc}][p-fn-int]’:
 
-`     `{.ws}[int]{.stx} [.]{.cc} [[bit_length(&thinsp;)]{.cc}][p-tp-int-bitlen]
+[3]{.ws}[int]{.stx} [.]{.cc} [[bit_length(&thinsp;)]{.cc}][p-tp-int-bitlen]
 
 Unfortunately, the Python documentation is not so clear on this, which might be confusing until you understand the various authors' conventions.
 
 Not all methods require an [obj]{.stx}ect; some are *class methods*, which means that we can call them ‘on the class’, *or* on an object of the same type. An example would be ‘&thinsp;[[int]{.cc}][p-fn-int][&hairsp;.&hairsp;]{.cc}[[from_bytes(&hairsp;)]{.cc}][p-tp-int-frombyte]&thinsp;’, which we can specify like this:
 
-`     `{.ws}[[int]{.cc}][p-fn-int] [.]{.cc} [[from_bytes(…)]{.cc}][p-tp-int-frombyte] 
+[3]{.ws}[[int]{.cc}][p-fn-int] [.]{.cc} [[from_bytes(…)]{.cc}][p-tp-int-frombyte] 
 
 :::{.cmdline prompt='>>'}
  * ``(123).from_bytes(b'\x02\x10', byteorder='big')  #▷528``{.py .ws}
@@ -241,7 +241,7 @@ Note that the CPython REPL will output [\<class '[type]{.stx}'\>]{.cc}, while IP
 
 Whenever you are in doubt regarding the [type]{.stx} of an [expr]{.stx}ession, do:
 
-`     `{.ws}[print( type( [expr]{.stx} ) )]{.cc}
+[3]{.ws}[print( type( [expr]{.stx} ) )]{.cc}
 
 The extra spaces have no effect… we just added them for readability.
 
@@ -271,18 +271,19 @@ Absolutely *any* value of *any* type, can be converted to boolean. This conversi
    * [[Fraction(0,1)]{.cc}][p-lib-fraction] — fractions
  * Empty collections or *sequences*:
    * [['']{.cc}][p-fn-str] or [[""]{.cc}][p-fn-str] — empty strings or [[str(&hairsp;)]{.cc}][p-fn-str]
-   * [[(&hairsp;)]{.cc}][p-fn-tuple] — empty tuples or [[tuple]{.cc}][p-fn-tuple]
-   * [[[&hairsp;]]{.cc}][p-fn-list] — empty lists or [[list]{.cc}][p-fn-list]
-   * [[{&hairsp;}]{.cc}][p-fn-dict] — empty dictionaries or [[dict]{.cc}][p-fn-dict]
+   * [[(&hairsp;)]{.cc}][p-fn-tuple] — empty tuples or [[tuple()]{.cc}][p-fn-tuple]
+   * [[[&hairsp;]]{.cc}][p-fn-list] — empty lists or [[list()]{.cc}][p-fn-list]
+   * [[{&hairsp;}]{.cc}][p-fn-dict] — empty dictionaries or [[dict()]{.cc}][p-fn-dict]
    * [[set(&hairsp;)]{.cc}][p-fn-set] — empty sets
    * [[range(0)]{.cc}][p-fn-range] — empty ranges
 
 :::{.cmdline prompt='>>'}
 ###### `repl` — Values that converts to False
- * ``bool()                                  #▷ False``{.py .ws}
- * ``bool(0)   ; bool(0.0) ; bool(0j)        #▷all `False`.``{.py .ws}
- * ``bool('')  ; bool("")  ; bool(())        #▷all `False`.``{.py .ws}
- * ``bool([])  ; bool({})  ; bool(set())     #▷all `False`.``{.py .ws}
+ * ``bool()                                    #▷ False``{.py .ws}
+ * ``bool(0)     ; bool(0.0)    ; bool(0j)     #▷all `False`.``{.py .ws}
+ * ``bool('')    ; bool("")     ; bool(())     #▷all `False`.``{.py .ws}
+ * ``bool([])    ; bool({})     ; bool(set())  #▷all `False`.``{.py .ws}
+ * ``bool(str()) ; bool(list())                #▷all `False`.``{.py .ws}
 :::
 
 [p-tp-nums]:
@@ -348,21 +349,21 @@ Python provides the [[int]{.cc}][p-fn-int] type to represents integer values. [I
 
 Since all types in Python are classes, this means that an [[int]{.cc}][p-fn-int] value is an *object*. In turn, an [[int]{.cc}][p-fn-int] object will have [methods][w-method], and [attributes][w-attrib]. Some [method]{.stx}s take [arg]{.stx}uments, which are sometimes optional:
 
-`     `{.ws}[obj]{.stx}[.]{.cc}[method]{.stx}[(]{.cc} [ [arg]{.stx}…  ] [)]{.cc}
+[3]{.ws}[obj]{.stx}[.]{.cc}[method]{.stx}[(]{.cc} [ [arg]{.stx}…  ] [)]{.cc}
 
 An example would be the [[bit_count]{.cc}][p-tp-int-bit_count] method, which is an *instance* method, which means we first need an [[int]{.cc}][p-fn-int] object. We can document the syntax as:
 
-`     `{.ws}[int]{.stx}[.]{.cc}[[bit_count(&hairsp;)]{.cc}][p-tp-int-bit_count]
+[3]{.ws}[int]{.stx}[.]{.cc}[[bit_count(&hairsp;)]{.cc}][p-tp-int-bit_count]
 
 On the other hand, the [[from_bytes]{.cc}][p-tp-int-from_bytes] method is a *class method*, which means we do not (necessarily) need an [[int]{.cc}][p-fn-int] object in order to call it. Syntax-wise, we show it as:
 
-`     `{.ws}[[int]{.cc}][p-fn-int][.]{.cc}[[from_bytes(…)]{.cc}][p-tp-int-from_bytes]
+[3]{.ws}[[int]{.cc}][p-fn-int][.]{.cc}[[from_bytes(…)]{.cc}][p-tp-int-from_bytes]
 
 The [[int]{.cc}][p-fn-int] function accepts an optional argument, or one argument, or two arguments. It can be used to truncate [[float]{.cc}][p-fn-float] values and return only the integer part. But, it can be passed a [[str]{.cc}][p-fn-str]ing type argument, which will be ‘converted’ to an [[int]{.cc}][p-fn-int]… as long as the characters in the string ‘looks like an integer’.
 
-`     `{.ws}[[int(&hairsp;)]{.cc}][p-fn-int]\
-`     `{.ws}[[int(]{.cc} [arg]{.stx} [)]{.cc}][p-fn-int]\
-`     `{.ws}[[int(]{.cc} [arg]{.stx}**, base=[[base]{.stx}]{.cc})**][p-fn-int]
+[3]{.ws}[[int(&hairsp;)]{.cc}][p-fn-int]\
+[3]{.ws}[[int(]{.cc} [arg]{.stx} [)]{.cc}][p-fn-int]\
+[3]{.ws}[[int(]{.cc} [arg]{.stx}**, base=[[base]{.stx}]{.cc})**][p-fn-int]
 
 Note that ["123"]{.cc} has type [[str]{.cc}][p-fn-str]ing, and [123]{.cc} has type [[int]{.cc}][p-fn-int], which has an effect on an operator like [\*]{.cc} (asterisk), which can have different behaviour depending on the types of the operands:
 
@@ -385,7 +386,7 @@ If the string representation of the argument is in base 2 (binary), you must pas
 
 You can pass arguments as a single [expr]{.stx}ession, or by naming the argument, using the name of the parameter as documented — Python call this ‘keyword argument’ syntax. There is a reason for this naming, but is unfortunately not readily apparent from above. Just try to remember that inside a function call operator, something like ‘**base=16**’, is called a *keyword argument*.
 
-`     `{.ws}[func]{.stx} [(]{.cc} [parm-name]{.stx}[=]{.cc}[expr]{.stx} [)]{.cc} `  `{.ws} []{.lar} *keyword argument*
+[3]{.ws}[func]{.stx} [(]{.cc} [parm-name]{.stx}[=]{.cc}[expr]{.stx} [)]{.cc} `  `{.ws} []{.lar} *keyword argument*
 
 [p-fn-int]:
    https://docs.python.org/3/library/functions.html#int 
@@ -405,12 +406,12 @@ You can pass arguments as a single [expr]{.stx}ession, or by naming the argument
 
 ## Floating-Point Type
 
-For situations where integers are not sufficient, as with physical data like distance, mass, velocity, etc., we have the [[float]{.cc}][p-fn-float] type. [Floating-point][w-float] types support typical arithmetic operators like multiplication ([*]{.cc}), addition ([+]{.cc}), subtraction ([-]{.cc}), and division ([/]{.cc}), and floor division ([/&thinsp;/]{.cc}.
+For situations where integers are not sufficient, as with physical data like distance, mass, velocity, etc., we have the [[float]{.cc}][p-fn-float] type. [Floating-point][w-float] types support typical arithmetic operators like multiplication (&hairsp;[*]{.cc}&hairsp;), addition ([+]{.cc}), subtraction (&hairsp;[-]{.cc}&hairsp;), and division (&hairsp;[/]{.cc}&hairsp;), and floor division ([&hairsp;//&hairsp;]{.cc}).
 
 Like [integers](#integer-type), a [[float]{.cc}][p-fn-float] object have methods and attributes, for example:
 
-`     `{.ws}[float]{.stx}[.]{.cc}[[hex(&hairsp;)]{.cc}][p-tp-float-hex] \ \  []{.lar} to hexadecimal representation.\
-`     `{.ws}[[float]{.cc}][p-fn-float][.]{.cc}[[fromhex('…')]{.cc}][p-tp-float-fromhex] \ \  []{.lar} from hexadecimal represention.
+[3]{.ws}[float]{.stx}[.]{.cc}[[hex(&hairsp;)]{.cc}][p-tp-float-hex] \ \  []{.lar} to hexadecimal representation.\
+[3]{.ws}[[float]{.cc}][p-fn-float][.]{.cc}[[fromhex('…')]{.cc}][p-tp-float-fromhex] \ \  []{.lar} from hexadecimal represention.
 
 Try [[help]{.cc}][p-fn-help][(float.hex)]{.cc} for example, to see the documentation.
 
@@ -505,13 +506,13 @@ Two major [[re]{.cc}][p-lib-re] methods are [[match()]{.cc}][p-lib-re-match] whi
 ###### `repl` — Regular expressions and re module
  * ``import re``{.py .ws}
  * ``print(re.match("ABC", "ABCDEFG"))``{.py .ws}
-   * \<re.Match object; span=(0, 3), match='ABC'\>
+ [\<re.Match object; span=(0, 3), match='ABC'\>]{.output}
  * ``print(re.match("DEF", "ABCDEFG"))``{.py .ws}
-   * None 
+[None]{.output}
  * ``print(re.search("ABC", "ABCDEFG"))``{.py .ws}
-   * \<re.Match object; span=(0, 3), match='ABC'\>
+[\<re.Match object; span=(0, 3), match='ABC'\>]{.output}
  * ``print(re.search("DEF", "ABCDEFG"))``{.py .ws}
-   * \<re.Match object; span=(3, 6), match='DEF'\>
+[\<re.Match object; span=(3, 6), match='DEF'\>]{.output}
 :::
 
 The [[str]{.cc}][p-fn-str] methods [[split()]{.cc}][p-tp-str-split] and [[replace()]{.cc}][p-tp-str-replace] can also use regular expression for very flexible string splitting base on complex delimiters, and sophisticated search-and-replace operations.
@@ -537,23 +538,23 @@ The [[str]{.stx}[.format]{.cc}][p-tp-str-fmt] allows us to [format][p-strfmt-stx
 
 The **`%`** overloaded operator is inspired by the C [[printf]{.cc}][w-c-printf] function. A ‘format string’ contains ‘placeholders’ starting with the percentage sign. Following the [%]{.cc}, are *format specifiers*. The placeholder is replaced with the formatted string representation of an [expr]{.stx}ession.
 
-`     `{.ws}["]{.cc}…[%]{.cc}[specifier]{.stx}…["]{.cc} &nbsp; [%]{.cc} &nbsp; [expr]{.stx}
+[3]{.ws}["]{.cc}…[%]{.cc}[specifier]{.stx}…["]{.cc} &nbsp; [%]{.cc} &nbsp; [expr]{.stx}
 
 :::{.cmdline prompt='>>'}
  * ``name = "ABC"``{.py .ws}
  * ``age = 123``{.py .ws}
  * ``result = "Name: %s (%dy)" % (name, age)``{.py .ws}
  * ``print(result)``{.py .ws}
-   * Name: ABC (123y)
+[Name: ABC (123y)]{.output}
  * ``print("Name: %s (%dy)" % (name, age))``{.py .ws}
-   * Name: ABC (123y)
+[Name: ABC (123y)]{.output}
 :::
 
 ### Format Method
 
 The [[str]{.cc}][p-fn-str][.]{.cc}[[format]{.cc}][p-tp-str-fmt] method also has placeholders which are replaced with a formatted string representation of some [expr]{.stx}ession. The placeholders are in the form of matching curly braces: [{]{.cc} … [}]{.cc}. To actually produce curly braces, they must be doubled up: [{{]{.cc} and/or [}}]{.cc}.
 
-`     `{.ws}["]{.cc}…[{&hairsp;}]{.cc}…[".format(]{.cc} [expr]{.stx} [)]{.cc}
+[3]{.ws}["]{.cc}…[{&hairsp;}]{.cc}…[".format(]{.cc} [expr]{.stx} [)]{.cc}
 
 :::{.cmdline prompt='>>'}
 ###### `repl` — String formatting method
@@ -561,9 +562,9 @@ The [[str]{.cc}][p-fn-str][.]{.cc}[[format]{.cc}][p-tp-str-fmt] method also has 
  * ``age = 123``{.py .ws}
  * ``result = "Name: {} ({}y)".format(name, age)``{.py .ws}
  * ``print(result)``{.py .ws}
-   * Name: ABC (123y)
+[Name: ABC (123y)]{.output}
  * ``print("Name: {} ({}y)".format(name, age))``{.py .ws}
-   * Name: ABC (123y)
+[Name: ABC (123y)]{.output}
 :::
 
 
@@ -577,9 +578,9 @@ The Python 3.6 formatted string literals allows for a more compact syntax compar
  * ``age = 123``{.py .ws}
  * ``result = f"Name: {name} ({age}y)"``{.py .ws}
  * ``print(result)``{.py .ws}
-   * Name: ABC (123y)
+ [Name: ABC (123y)]{.output}
  * ``print(f"Name: {name} ({age}y)")``{.py .ws}
-   * Name: ABC (123y)
+ [Name: ABC (123y)]{.output}
 :::
 
 We call such strings *f-strings* for short. They use the same ‘formatting language’ as [[str]{.cc}][p-fn-str][.]{.cc}[[format]{.cc}][p-tp-str-fmt] for the [expr]{.stx}essions between the curly braces.

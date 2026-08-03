@@ -60,9 +60,11 @@ The `>>>` part is called a *prompt*, which indicates that Python is ready for th
 
 :::{.cmdline prompt='>>'}
  * hello
-   * Traceback (most recent call last):
-   *   File "<stdin>", line 1, in <module>
-   * NameError: name 'hello' is not defined. Did you mean: 'help'?
+```{.output}
+Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+NameError: name 'hello' is not defined. Did you mean: 'help'?
+```
  * ▄
 :::
 
@@ -75,7 +77,7 @@ Now we are *back* at the prompt, which means Python performed the ‘loop’ par
 :::{.cmdline prompt='>>'}
 ###### `repl` — Automatic printing of expression statements
  * ``2 + 3 * 5``{.py}
-   * 17
+[17]{.output}
  * ▄
 :::
 
@@ -224,36 +226,38 @@ You can explicitly continue a statement on the following line by ending a line w
 
 :::{.cmdline prompt='>>'}
 ###### `repl` — Explicit statement continuation
- * `print("ABC`{.py}\
-   `DEF`{.py}\
-   `GHI")`{.py}
-   * ABCDEFGHI
+ * `print("ABC`{.py}
+   * `DEF`{.py}
+   * `GHI")`{.py}
+[ABCDEFGHI]{.output}
 :::
 
 Between paired delimiters, excluding single and double quotes, you can continue a statement without an explicit continuation backslash. The following statement is split across three lines, producing the same output as the example above. We can even add comments:
 
 :::{.cmdline prompt='>>'}
 ###### `repl` — Delimiter statement continuation
- * ``print(                    #← first line of statement.``{.py .ws}\
-   ``"ABCDEFGHI"               #← second line of statement.``{.py .ws}\
-   ``)                         #← last line of statement.``{.py .ws}
-   * ABCDEFGHI
+ * ``print(                    #← first line of statement.``{.py .ws}
+   * ``"ABCDEFGHI"               #← second line of statement.``{.py .ws}
+   * ``)                         #← last line of statement.``{.py .ws}
+[ABCDEFGHI]{.output}
 :::
 
 One can break lines between other paired delimiters like `{}` and `[]`.
 
 ::: {.cmdline prompt=">>"}
 ###### `repl` — More implicit statement continuations
-* ``L = [ 12,``{.py .ws}\
-  ``       34,``{.py .ws}\
-  ``       56 ]``{.py .ws}
+* ``L = [ 12,``{.py .ws}
+  * ``       34,``{.py .ws}
+  * ``       56 ]``{.py .ws}
 * `print(L)`{.py}
-* ``D = {``{.py .ws}\
-  ``   'A':12,``{.py .ws}\
-  ``   'B':23,``{.py .ws}\
-  ``   'C':34,``{.py .ws}\
-  ``   }``{.py .ws}
+[\[12, 34, 56\]]{.output}
+* ``D = {``{.py .ws}
+  * ``   'A':12,``{.py .ws}
+  * ``   'B':23,``{.py .ws}
+  * ``   'C':34,``{.py .ws}
+  * ``   }``{.py .ws}
 * ``print(D)``{.py .ws}
+[{'A': 12, 'B': 23, 'C': 34}]{.output}
 :::
 
 The leading spaces have no syntactic meaning (*semantics*) in the above examples, but in other places they are significant. We call such places *blocks*.
@@ -265,7 +269,7 @@ Python has several categories of statements, but a very common one, is the *expr
 :::{.cmdline prompt='>>'}
 ###### `repl` — Expression statement examples
  * ``123 + 654            #← no call, no state change.``{.py .ws}
-   * 777``                  #← REPL will print result.``{.py .ws}
+ [ 777``                  #← REPL will print result.``{.py .ws}]{.output}
  * ``print(a)             #← function call.``{.py .ws}
 :::
 
@@ -281,7 +285,7 @@ Unlike some C-like languages, where the equal sign (**=**) is an *operator* that
 
 The most basic and common assignment statement syntax, pairs an [ident]{.stx}ifier on the left, of an equal sign ([=]{.cc}), with an [expr]{.stx}ression on the right. Effectively, the [ident]{.stx}ifier *labels* the result of the [expr]{.stx}ression.
 
-`     `{.ws}[ident]{.stx} [=]{.cc} [expr]{.stx}
+[3]{.ws}[ident]{.stx} [=]{.cc} [expr]{.stx}
 
 This is the most common form of assignment. It will create the [ident]{.stx}ifier if it does not exist. A referenced to the [expr]{.stx}ression will be allocated to the [ident]{.stx}ifier. In Python, the [expr]{.stx}ression, will always be an *object* automatically allocated memory.
 
@@ -289,7 +293,7 @@ This is the most common form of assignment. It will create the [ident]{.stx}ifie
 
 Python supports *chained assignment*, which means a single statement syntax that assigns the value of an [expr]{.stx}ession to more than [ident]{.stx}ifier. These names will be created if necessary.
 
-`     `{.ws}[ident~1~]{.stx} [=]{.cc} [ident~2~]{.stx} [=]{.cc} [ident~3~]{.stx} … [ident~n~]{.stx} [=]{.cc} [expr]{.stx}
+[3]{.ws}[ident~1~]{.stx} [=]{.cc} [ident~2~]{.stx} [=]{.cc} [ident~3~]{.stx} … [ident~n~]{.stx} [=]{.cc} [expr]{.stx}
 
 Any number of names can appear on the left, separated by equal signs ([=]{.cc}).
 
@@ -304,7 +308,7 @@ The variables [a]{.cc}, [b]{.cc} and [c]{.cc}, will all ‘label’ the same obj
 
 It is possible to have several names on the left of a single assignment, as long as there is an *iterable* [expr]{.stx}ession on the right. Abstractly, an iterable is a collection of values that can be ‘visited’ one-by-one. The number of items in the iterable must match the number of names on the left. This syntax is called *iterable unpacking* (though some call it *tuple unpacking*).
 
-`     `{.ws}[ident~1~]{.stx}[,]{.cc} [ident~2~]{.stx}[,]{.cc} … [ident~n~]{.stx} [=]{.cc} [iterable]{.stx}
+[3]{.ws}[ident~1~]{.stx}[,]{.cc} [ident~2~]{.stx}[,]{.cc} … [ident~n~]{.stx} [=]{.cc} [iterable]{.stx}
 
 The result of the right hand [expr]{.stx}ession can be of any [type]{.stx}, as long as the type supports iteration. This is true for functions like [[range]{.cc}][p-fn-range]. Types like [[list]{.cc}][p-fn-list] and [[tuple]{.cc}][p-fn-tuple], including their literals are also iterable.
 
@@ -336,7 +340,7 @@ A special syntax allows *one* of the names on the left, to be prefixed with an a
 
 As a convenient shorthand, Python allows for the assignment's equal sign to be prefixed with a *binary operator*, e.g.: [+=]{.cc}, [\*=]{.cc}, [%=]{.cc}, etc. The [op]{.stx} in the syntax below can be any binary [op]{.stx}erator:
 
-`     `{.ws}[ident]{.stx} \ [op]{.stx}[=]{.cc} \ [expr]{.stx} \ \ \ \ []{.eqv} \ \ \ \ [ident]{.stx} [=]{.cc} [ident]{.stx} [op]{.stx} [expr]{.stx}
+[3]{.ws}[ident]{.stx} \ [op]{.stx}[=]{.cc} \ [expr]{.stx} \ \ \ \ []{.eqv} \ \ \ \ [ident]{.stx} [=]{.cc} [ident]{.stx} [op]{.stx} [expr]{.stx}
 
 :::{.cmdline prompt='>>'}
 ###### `repl` — Augmented assignments
@@ -367,29 +371,20 @@ We strongly recommend you use these augmented assignment statements, since they 
 
 Formally, we call the names of ‘things’, [identifiers][w-ident]. Anything with a name, must follow identifier [naming rules][p-ref-ident]. Simplified: an [iden]{.stx}ifier must start with an alphabetic character, after which, more alphabetic characters, decimal digits, and underscores can follow, to arbitrary length. There are special situations where we start indentifiers with one or two underscores (&hairsp;[_]{.cc}&hairsp;), but that is only in advanced situations.
 
-<!--TODO: Once implemented, enable this, and remove the alternative below
-`     `{.ws}[ident]{.stx} []{.dra} [alpha-char]{.stx}[ [alpha-char]{.stx}[]{.alt}[digit]{.stx}[] ]{.opt}{.zom}
--->
+[3]{.ws}[ident]{.stx} []{.dra} [alpha-char]{.stx}[ [alpha-char]{.stx}[]{.alt}[digit]{.stx}[]{.alt}[_]{.cc} ]{.opt}[]{.zom}
 
-`     `{.ws}[ident]{.stx} []{.dra} [alpha-char]{.stx}[ [alpha-char]{.stx}[]{.alt}[digit]{.stx} ]~*~
 
-The above means: An *identifier* is defined in terms of an alphabetic character, followed by zero or more of either another alphabetic character, or a decimal digit. It cannot start with a digit.
+The above means: An *identifier* is defined in terms of an alphabetic character, followed by zero or more of either another alphabetic character, a decimal digit, or underscore. It cannot start with a digit.
 
 An additional identifier naming rule states that it cannot be a [keyword](#keywords). See below.
-
-<!--TODO: Remove this experiment:-->
-`     `{.ws}[ [extern]{.cc .def} []{.alt} [void]{.cc} ]{.opt} [ident]{.stx} [(]{.cc} [ [parm-list]{.stx} []{.alt} [void]{.cc} ]{.opt} [)]{.cc}
-
-`     `{.ws}[ [extern]{.cc .def} []{.alt} [void]{.cc} ] [ident]{.stx} [(]{.cc} [ [parm-list]{.stx} []{.alt} [void]{.cc} ] [)]{.cc}
 
 ## Keywords
 
 Keywords, also called [reserved words][w-keyword] cannot be used as identifiers. They can only be used for their intend purpose. Python does not have too many keywords
 
 :::{.admon .warning}
-***Renaming Built-In Functions***
-
-Unlike keywords, you *can* change the meaning of built-in function names. Even though it is syntactically legal, you should **never**, **ever**, do that. Linters like [pylint]{.cc} will warn you when you do, so pay attention.
+###### Changing Built-In Functions
+Unlike keywords, you *can* change the meaning of built-in function names (the object they refer to). Even though it is syntactically legal, you should **never**, **ever**, do that. Linters like [pylint]{.cc} will warn you when you do, so pay attention.
 :::
 
 For completeness, here is a list of the Python 3.14 keywords, as produced by the output of [help('keywords')]{.cc} in the Python REPL:
@@ -522,7 +517,7 @@ Inside a Python REPL, you can request help for any [built-in][p-fn] function, [s
 
 ## Topical Help 
 
-Python has a built-in function called [[help]{.cc}][p-fn-help]. To call this function you must append the function call operator: `()` or `('‹arg›')`. For an [arg]{.stx}ument, you can enter an standard library module name, a built-in function name, or even a keyword.
+Python has a built-in function called [[help]{.cc}][p-fn-help]. To call this function you must append the function call operator: [(&hairsp;)]{.cc} or [(]{.cc}&hairsp;[arg]{.stx}&hairsp;[)]{.cc}. For an [arg]{.stx}ument, you can enter an standard library module name, a built-in function name, or even a keyword.
 
 :::{.cmdline prompt=">>"}
 ###### `repl` — Topical help
@@ -543,7 +538,7 @@ There seems to be no simple way to get a list of [built-in functions][p-fn], but
 * `[f for f in dir(bi) if it.isbuiltin(getattr(bi, f))] #(1)`{.py .ws}
 :::
  
- 1) The above does not output the names of *type functions*, for some reason.
+ (1) The above does not output the names of *type functions*, for some reason.
 
 [p-fn]:
    https://docs.python.org/3/library/functions.html
@@ -579,8 +574,8 @@ Notice how the prompt changes when you are inside the interactive help REPL.
 
 To inspect the documentation for the any [module]{.stx}, we must first [[import]{.cc}][p-st-import] the module. In general terms, the process is:
 
-`     `{.ws}[[import]{.cc}][p-st-import] \ [module]{.stx}\
-`     `{.ws}[[help]{.cc}][p-fn-help][(]{.cc} [module]{.stx} [)]{.cc}
+[3]{.ws}[[import]{.cc}][p-st-import] \ [module]{.stx}\
+[3]{.ws}[[help]{.cc}][p-fn-help][(]{.cc} [module]{.stx} [)]{.cc}
 
 To display documentation for the [[math]{.cc} module][p-m-math], as an example:
 
@@ -610,7 +605,7 @@ As we have seen Python REPLs will automatically print the results of [expr]{.stx
 
 The premier ‘tool’ for writing output, is the [[print]{.cc} function][p-fn-print]. It is documented as follows:
 
-`     `{.ws}[[print]{.cc}][p-fn-print][(]{.cc} \**objects*, [sep]{.cc}='\ \ ', [end]{.cc}='\\n', [file]{.cc}=[None]{.cc}, [flush]{.cc}=[False]{.cc} [)]{.cc}
+[3]{.ws}[[print]{.cc}][p-fn-print][(]{.cc} \**objects*, [sep]{.cc}='\ \ ', [end]{.cc}='\\n', [file]{.cc}=[None]{.cc}, [flush]{.cc}=[False]{.cc} [)]{.cc}
 
 The ‘\**objects*’ part means that you can pass [[print]{.cc}][p-fn-print] *any* number of arguments. It will print each of those arguments separated by the value of the [sep]{.cc} parameter, which by default is space ([SP]{.chr} or &thinsp;␣&thinsp;). After all arguments have been send to output, the value of [end]{.cc} (by default [NL]{.chr} or ['\\n']{.cc}) is added.
 
@@ -685,11 +680,11 @@ Until we have discussed exceptions in more depth, you can either ignore the poss
 :::{.cmdline prompt='>>'}
 ###### `repl` — Input error handling pattern
  * `import sys`{.py}
- * `try:`{.py}\
-   `   height = input("Height?: ") #← input height.`{.py .ws}\
-   `   print(f"Height: {height}")  #← use height.`{.py .ws}\
-   `except:                        #← handle any exception.`{.py .ws}\
-   `   print("Bad input", file=sys.stderr)`{.py .ws}
+ * `try:`{.py}
+   * `   height = input("Height?: ") #← input height.`{.py .ws}
+   * `   print(f"Height: {height}")  #← use height.`{.py .ws}
+   * `except:                        #← handle any exception.`{.py .ws}
+   * `   print("Bad input", file=sys.stderr)`{.py .ws}
 :::
 
 The first [[print]{.cc}][p-fn-print] line will not execute if an exception was raised — execution will continue on the line after [except:]{.cc}&thinsp;. If no exception was raised, statements after [except]{.cc}, will not execute.

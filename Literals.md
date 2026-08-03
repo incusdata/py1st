@@ -1,6 +1,9 @@
-[Literals][p-ref-literals] are constant values with clear and apparent values. You surely have no doubt about the value of **123**? It is clearly not a variable… its value cannot vary, it is fixed, or *constant* (which is the reason some use the term ‘constant’ instead of the more appropriate ‘[literal][w-literal]’).
+---
+title: Literals
+abstract: |
+   [Literals][p-ref-literals] are constant values with clear and apparent values. You surely have no doubt about the value of **123**? It is clearly not a variable… its value cannot vary, it is fixed, or *constant* (which is the reason some use the term ‘constant’ instead of the more appropriate ‘[literal][w-literal]’). In Python terminology, **123** is a literal having the *value* **123** with [type][idgh-wiki-types] of [**int**][p-fn-int]. There are several other types of literals, each having their on syntax to distinguish them from other literals.
+---
 
-In Python terminology, **123** is a literal having the *value* **123** with [type][idgh-wiki-types] of [**int**][p-fn-int]. There are several other types of literals, each having their on syntax to distinguish them from other literals.
 
 [p-ref-literals]:
    https://docs.python.org/3/reference/expressions.html#literals

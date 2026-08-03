@@ -49,7 +49,7 @@ This wiki provides information for beginners to intermediate Python learners.
 
 Before starting to learn Python, it is important to have the necessary tools and to set realistic expectations. However, as the age of AI-assisted programming and learning is dawning, you may be able to take a non-traditional approach — but that's your prerogative.
 
-`     `{.ws}TL;DR:&nbsp;&nbsp; [os](#os) []{.rar} [terminal](#terminal) []{.rar} [shell](#shell) []{.rar} [python](#python) []{.rar} [you](#you)
+[3]{.ws}TL;DR:&nbsp;&nbsp; [os](#os) []{.rar} [terminal](#terminal) []{.rar} [shell](#shell) []{.rar} [python](#python) []{.rar} [you](#you)
 
 ### You
 
@@ -210,7 +210,7 @@ A few characters or symbols are used as shorthand for common terms:
 
 A complete Python script will always start with the following [shebang][w-shebang] (or *hash-bang*):
 
-&nbsp;&nbsp;&nbsp;&nbsp; `#/usr/bin/env python3`
+[3]{.ws}`#/usr/bin/env python3`
 
 Here is an example [[hyby.py]{.cc}][src-simple-hyby.py] (“high buy period pie”) complete script:
 
@@ -242,11 +242,14 @@ Interactive examples in a Python [REPL][w-repl] (Read-Eval-Print-Loop), will app
 
 :::{.cmdline prompt='>>'}
 ###### `python` — *Python REPL example*
- * `print("Hello, World!")  #▷ Hello, World!`{.py .ws}
- * `print(                  #← incomplete statement`{.py .ws}\
-   `   "Hello,\nWorld!")    #  that ends here.`{.py .ws}
-   * Hello,
-   * World!
+ * `print("Hello, World!")`{.py .ws}
+[Hello, World!]{.output}
+ * `print(                 #← incomplete statement`{.py .ws}
+   * `   "Hello,\nWorld!")   #  that ends here.`{.py .ws}
+```{.output}
+Hello,
+World!
+```
 :::
 
 In examples involving operating system shells, the prompt will be indicated with `$>`. The rest of the conventions are from above. Where appropriate, we will indicate whether a Linux shell or PowerShell is used with: `sh` or `pwsh` respectively; when command-lines are the same in both type of shells, we will not mention anything. For Command Prompt, we will use `cmd`.
@@ -297,20 +300,20 @@ Operators in a complex expression are evaluated one-by-one, the order of which i
 
 What is just as important to understand, is that: every expression has a [value]{.stx}, as well as a [type]{.stx}, which sound circular, because a value is an expression, but by [value]{.stx} me mean the ‘raw computer value in memory’, which is a *concrete* sequence of bytes in the computer, whereas a [type]{.stx} is an *abstraction* that governs the behaviour and operations on a value.
 
-`      `{.ws}[expr]{.stx} &nbsp; [v]{.tra} &nbsp; [value]{.stx}\
-`      `{.ws}[expr]{.stx} &nbsp; [t]{.tra} &nbsp; [type]{.stx}
+[3]{.ws}[expr]{.stx} &nbsp; [v]{.tra} &nbsp; [value]{.stx}\
+[3]{.ws}[expr]{.stx} &nbsp; [t]{.tra} &nbsp; [type]{.stx}
 
 Think of an expression always having these two attributes. For example, the result (final value) of the Python expression:
 
-`     2 + 3 * 5`{.py .ws}
+[3]{.ws}`2 + 3 * 5`{.py}
 
 Has the [type]{.stx} [[int]{.cc}][p-t-int], and the [value]{.stx} 17, or in more compact notation:
 
-`     2 + 3 * 5`{.py .ws} \ [t]{.tra} \ [[int]{.cc}][p-t-int] \  [v]{.tra} \ 17
+[3]{.ws}`2 + 3 * 5`{.py} \ [t]{.tra} \ [[int]{.cc}][p-t-int] \  [v]{.tra} \ 17
 
 If we apply parentheses, we can write:
 
-`     (2 + 3) * 5`{.py .ws} \ [t]{.tra} \ [[int]{.cc}][p-t-int] \ [v]{.tra} \ 25
+[3]{.ws}`(2 + 3) * 5`{.py} \ [t]{.tra} \ [[int]{.cc}][p-t-int] \ [v]{.tra} \ 25
 
 The *result* of the expression is an [[int]{.cc}][p-t-int], simply because Python has rules that ensure that arithmetic operators [+]{.cc} and [\\]{.cc} with [[int]{.cc}][p-t-int] operands, will produce an [[int]{.cc}][p-t-int] result.
 
@@ -342,7 +345,7 @@ Python has decided that this particular literal, has [type]{.stx}: [[int]{.cc}][
 
 :::{.cmdline prompt='>>'}
 * `print( type(123) )`{.py}
-  * \<class 'int'\>
+[\<class 'int'\>]{.output}
 :::
 
 Ignore the [class]{.cc} part (all types are classes, so writing that is redundant, but technically correct). In IPython, the result will simply be [int]{.cc}, which is what we really care about.
