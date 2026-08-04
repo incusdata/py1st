@@ -90,7 +90,7 @@ Python is currently managed by the [Python Software Foundation][w-psf], as [open
 
 Ongoing Python [development][w-py-dev] are driven by [PEPs][peps] (Python Enhancement Proposals). Many of Python's current features and syntax (but not all) are documented in PEPs. Some PEPs are [whimsical][pep20] (though some might object to the adjective).
 
-One PEP even suggests a [coding style][pep8], which is taken *very* seriously by some. The latter is the cause for the term *pythonista* as somebody who writes not only *pythonic* (idiomatic) code, but adheres to [PEP-8][pep8] and advocates it. Tools exist to check that your code adhere to PEP-8, like [**flake8**][flake8-docs], [**pylint**][pylint-docs] and the must newer ‘written in Rust’ [**ruff**][astral-ruff], which incidentally, can also *format* your code, and has a [Ruff VSCode Extension][vsc-x-ruff].
+One PEP even suggests a [coding style][pep8], which is taken *very* seriously by some. The latter is the cause for the term *pythonista* as somebody who writes not only *pythonic* (idiomatic) code, but adheres to [PEP-8][pep8] and advocates it. Tools exist to check that your code adhere to PEP-8, like [[flake8]{.cc}][flake8-docs], [[pylint]{.cc}][pylint-docs] and the must newer ‘written in Rust’ [[ruff]{.cc}][astral-ruff], which incidentally, can also *format* your code, and has a [Ruff VSCode Extension][vsc-x-ruff].
 
 [w-psf]:
    https://en.wikipedia.org/wiki/Python_Software_Foundation
@@ -168,12 +168,12 @@ Here are a few topics and features that put Python in context and distinguish it
 : Python occasionally and automatically, ‘[collects garbage][w-garbage]’ memory that is not in use any more. To do this, it performs [reference counting][w-refcnt], which incurs overhead. This behaviour is similar to other [memory-managed][w-memmgt] languages like Java and C#, in contrast to C and C++ which does not automatically manage dynamic memory.
 
 **COMPILED (NOT)**
-: Python scripts are [tokenized][w-tokenize] into a more compact form, which is a high-level type of compilation. This happens before the code is interpreted (executed). Under certain circumstance, Python may store this ‘compiled’ code in a **\_\_pycache\_\_** subdirectory, when interpreting scripts.
+: Python scripts are [tokenized][w-tokenize] into a more compact form, which is a high-level type of compilation. This happens before the code is interpreted (executed). Under certain circumstance, Python may store this ‘compiled’ code in a [\_\_pycache\_\_]{.cc} subdirectory, when interpreting scripts.
 
 : The ‘compiled’ script name will be [name]{.stx}**.pyc** inside the cache directory. These files can be safely deleted. Alternatively, you can run them like any Python script or even distribute them to clients instead of the [name]{.stx}**.py** files. It will save some space, and slightly faster loading/execution. However, this is not a security measure.
 
 **STATEMENTS**
-: [Statements][w-statement] are terminated by a newline, also called a linefeed, (character [NL]{.stx}/[LF]{.stx}). There are situations where a statement may be continued onto a physical new line (statements spanning lines).
+: [Statements][w-statement] are terminated by a newline, also called a linefeed, (character [NL]{.chr}/[LF]{.chr}). There are situations where a statement may be continued onto a physical new line (statements spanning lines).
 
 : Python is one of a few languages that allow ‘useless [expr]{.stx}essions’ as legal statements. This is so that Python REPLs can automatically print the results of such [expr]{.stx}essions. In a script, such an *expression statement* will have no effect (i.e., ‘useless’).
 
@@ -187,7 +187,7 @@ Here are a few topics and features that put Python in context and distinguish it
 : [Generators][w-generator] are a special type of [iterator][w-iter] that allows you to create an iterable object using the [**yield**][p-st-yield] statement. They provide an efficient way to work with large datasets or infinite sequences by only generating the next item in the sequence when it's needed.
 
 **CONTEXT MANAGERS**
-: Python has built-in support for creating and using context managers using the [**with**][p-st-with] statement. Context managers simplify the process of acquiring and releasing resources, such as file handles or network connections, by automatically closing them for you.
+: Python has built-in support for creating and using context managers using the [[with]{.cc}][p-st-with] statement. Context managers simplify the process of acquiring and releasing resources, such as file handles or network connections, by automatically closing them for you.
 
 **DECORATORS**
 : [Decorator][w-py-deco] is feature in Python that allow you to modify or extend the behaviour of functions or classes. They are essentially functions that take another function or class as input and return a new function or class with the modified behaviour.
