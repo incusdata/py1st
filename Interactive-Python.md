@@ -537,7 +537,7 @@ There seems to be no simple way to get a list of [built-in functions][p-fn], but
 * `[f for f in dir(bi) if it.isbuiltin(getattr(bi, f))] #(1)`{.py .ws}
 :::
  
- (1) The above does not output the names of *type functions*, for some reason.
+> (1) The above does not output the names of *type functions*, for some reason.
 
 [p-fn]:
    https://docs.python.org/3/library/functions.html
