@@ -54,7 +54,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> ▄
 ```
 
-The first line will give you some information about the version of Python installed, and for which operating system it has been compiled. That can vary, so focus on the `3.14.…` part, which is the most important and says we are running Python 3.14. If yours says `3.15.…`, that is fine as well; if older that `3.10`, you have a problem.
+The first line will give you some information about the version of Python installed, and for which operating system it has been compiled. That can vary, so focus on the `3.14.…` part, which is the most important and says we are running Python 3.14. If yours says `3.15.…`, that is fine as well; if older that 3.10, you have a problem.
 
 The `>>>` part is called a *prompt*, which indicates that Python is ready for the ‘read’ part of REPL. The `▄` shows the position of your cursor. Whatever you type now, must be legal Python syntax, but it is good to see what Python will do if you type something like [hello]{.cc} (which is not valid):
 
@@ -279,7 +279,7 @@ Technically, a function call does not involve an operator, but you can think of 
 
 ## Assignment Statements
 
-Unlike some C-like languages, where the equal sign (**=**) is an *operator* that copies values and return results, in Python the equal sign is part of an [assignment statement][p-st-assign]. There are several assignment statements.
+Unlike some C-like languages, where the equal sign ([=]{.cc}) is an *operator* that copies values and return results, in Python the equal sign is part of an [assignment statement][p-st-assign]. There are several assignment statements.
 
 ### Simple Assignment
 
