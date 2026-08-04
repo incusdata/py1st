@@ -133,7 +133,7 @@ One PEP even suggests a [coding style][pep8], which is taken *very* seriously by
 
 Python 3.0, released in 2008, represented a major change from Python 2.x, which introduced several in&shy;com&shy;pat&shy;ibil&shy;ities. Python 2 is no longer supported, but can still be found ‘in the wild’. A consequence of this, is that on some Linux distributions, you may get Python 2, if you run **python**; for Python 3, you are supposed to run **python3**.
 
-This repository focuses on Python 3.14, but do mention Python earlier versions down to 3.10. All scripts require at least version 3.10; those that don't will mention it. But all *will* run on 3.14.
+This site focuses on Python 3.14, but do mention earlier Python versions down to v3.10. All scripts require at least version v3.10; those that don't will mention it. But all *will* run on v3.14.
 
 [idgh-py1st-repo]:
    https://github.com/incusdata/py1st
@@ -149,47 +149,66 @@ This repository focuses on Python 3.14, but do mention Python earlier versions d
 
 Here are a few topics and features that put Python in context and distinguish it from other programming languages.
 
-**INTERPRETER** — Python is an [interpreted][w-interpreter] language, that supports [multi-paradigm][w-paradigm] program development. This means if you like [OOP][w-oop] (object-oriented programming), Python will do OOP. Or, if you prefer a more [imperative][w-imperative] approach, Python will oblige.
+**INTERPRETER**
+: Python is an [interpreted][w-interpreter] language, that supports [multi-paradigm][w-paradigm] program development. This means if you like [OOP][w-oop] (object-oriented programming), Python will do OOP. Or, if you prefer a more [imperative][w-imperative] approach, Python will oblige.
 
-**CLASSES** — All types ([type]{.stx} in syntax), are [class][w-class] types. Values are thus often called [objects][w-object], and have [attributes][w-attrib], [methods][w-method], and in some cases, [properties][w-property]. All objects are stored ‘somewhere in memory’ — we really don not care *where*, as Python manages memory for us.
+**CLASSES**
+: All types ([type]{.stx} in syntax), are [class][w-class] types. Values are thus often called [objects][w-object], and have [attributes][w-attrib], [methods][w-method], and in some cases, [properties][w-property]. All objects are stored ‘somewhere in memory’ — we really don not care *where*, as Python manages memory for us.
 
-**OBJECTS** — Objects are managed only by a *reference*. We can never move an object's memory around, only a reference to the object (much like a *pointer* in C/C++). This is an invariant (a fact that never changes and has no exceptions).
+**OBJECTS**
+: Objects are managed only by a *reference*. We can never move an object's memory around, only a reference to the object (much like a *pointer* in C/C++). This is an invariant (a fact that never changes and has no exceptions).
 
-**DUCK TYPING** — Python employs [duck typing][w-ducktype], which is a form of dynamic (runtime) typing. In practice, this means that you do not have to specify types for variables or parameters. For example, you can pass any type of argument to a function, as long as the argument's [type]{.stx} exhibits the expected *behaviour*.
+**DUCK TYPING**
+: Python employs [duck typing][w-ducktype], which is a form of dynamic (runtime) typing. In practice, this means that you do not have to specify types for variables or parameters. For example, you can pass any type of argument to a function, as long as the argument's [type]{.stx} exhibits the expected *behaviour*.
 
-**KEYWORD ARGUMENTS** — Python's term for [named parameters][w-namedparm] is *keyword arguments*. When passing arguments to a function, the caller has the option to include the parameter name. An *argument* is an expression that initialises a function *parameter*.
+**KEYWORD ARGUMENTS**
+: Python's term for [named parameters][w-namedparm] is *keyword arguments*. When passing arguments to a function, the caller has the option to include the parameter name. An *argument* is an expression that initialises a function *parameter*.
 
-**MEMORY** — Python occasionally and automatically, ‘[collects garbage][w-garbage]’ memory that is not in use any more. To do this, it performs [reference counting][w-refcnt], which incurs overhead. This behaviour is similar to other [memory-managed][w-memmgt] languages like Java and C#, in contrast to C and C++ which does not automatically manage dynamic memory.
+**MEMORY**
+: Python occasionally and automatically, ‘[collects garbage][w-garbage]’ memory that is not in use any more. To do this, it performs [reference counting][w-refcnt], which incurs overhead. This behaviour is similar to other [memory-managed][w-memmgt] languages like Java and C#, in contrast to C and C++ which does not automatically manage dynamic memory.
 
-**NOT COMPILED** — Python scripts are [tokenized][w-tokenize] into a more compact form, which is a high-level type of compilation. This happens before the code is interpreted (executed). Under certain circumstance, Python may store this ‘compiled’ code in a **\_\_pycache\_\_** subdirectory, when interpreting scripts.
+**COMPILED (NOT)**
+: Python scripts are [tokenized][w-tokenize] into a more compact form, which is a high-level type of compilation. This happens before the code is interpreted (executed). Under certain circumstance, Python may store this ‘compiled’ code in a **\_\_pycache\_\_** subdirectory, when interpreting scripts.
 
-The ‘compiled’ script name will be [name]{.stx}**.pyc** inside the cache directory. These files can be safely deleted. Alternatively, you can run them like any Python script or even distribute them to clients instead of the [name]{.stx}**.py** files. It will save some space, and slightly faster loading/execution. However, this is not a security measure.
+: The ‘compiled’ script name will be [name]{.stx}**.pyc** inside the cache directory. These files can be safely deleted. Alternatively, you can run them like any Python script or even distribute them to clients instead of the [name]{.stx}**.py** files. It will save some space, and slightly faster loading/execution. However, this is not a security measure.
 
-**STATEMENTS** — [Statements][w-statement] are terminated by a newline, also called a linefeed, (character [NL]{.stx}/[LF]{.stx}). There are situations where a statement may be continued onto a physical new line (statements spanning lines).
+**STATEMENTS**
+: [Statements][w-statement] are terminated by a newline, also called a linefeed, (character [NL]{.stx}/[LF]{.stx}). There are situations where a statement may be continued onto a physical new line (statements spanning lines).
 
-Python is one of a few languages that allow ‘useless [expr]{.stx}essions’ as legal statements. This is so that Python REPLs can automatically print the results of such [expr]{.stx}essions. In a script, such an *expression statement* will have no effect (i.e., ‘useless’).
+: Python is one of a few languages that allow ‘useless [expr]{.stx}essions’ as legal statements. This is so that Python REPLs can automatically print the results of such [expr]{.stx}essions. In a script, such an *expression statement* will have no effect (i.e., ‘useless’).
 
-**INDENTATION** — Leading whitespace is significant in Python. Incorrect indentation can result in syntax errors. You should pay attention when this comes up. The main reason for this syntactic choice is the Python code appears ‘cleaner’ than languages that rely on delimiters ([free-format][w-freeform] languages).
+**INDENTATION**
+: Leading whitespace is significant in Python. Incorrect indentation can result in syntax errors. You should pay attention when this comes up. The main reason for this syntactic choice is the Python code appears ‘cleaner’ than languages that rely on delimiters ([free-format][w-freeform] languages).
 
-**COMPREHENSIONS** — Python supports various [comprehensions][p-ds-compr], which provide a concise way to create lists, tuples, or dictionaries, using a single line of code. They help make your code more readable and often require fewer lines than traditional loops.
+**COMPREHENSIONS**
+: Python supports various [comprehensions][p-ds-compr], which provide a concise way to create lists, tuples, or dictionaries, using a single line of code. They help make your code more readable and often require fewer lines than traditional loops.
 
-**GENERATORS** — [Generators][w-generator] are a special type of [iterator][w-iter] that allows you to create an iterable object using the [**yield**][p-st-yield] statement. They provide an efficient way to work with large datasets or infinite sequences by only generating the next item in the sequence when it's needed.
+**GENERATORS**
+: [Generators][w-generator] are a special type of [iterator][w-iter] that allows you to create an iterable object using the [**yield**][p-st-yield] statement. They provide an efficient way to work with large datasets or infinite sequences by only generating the next item in the sequence when it's needed.
 
-**CONTEXT MANAGERS** — Python has built-in support for creating and using context managers using the [**with**][p-st-with] statement. Context managers simplify the process of acquiring and releasing resources, such as file handles or network connections, by automatically closing them for you.
+**CONTEXT MANAGERS**
+: Python has built-in support for creating and using context managers using the [**with**][p-st-with] statement. Context managers simplify the process of acquiring and releasing resources, such as file handles or network connections, by automatically closing them for you.
 
-**DECORATORS** — [Decorator][w-py-deco] is feature in Python that allow you to modify or extend the behaviour of functions or classes. They are essentially functions that take another function or class as input and return a new function or class with the modified behaviour.
+**DECORATORS**
+: [Decorator][w-py-deco] is feature in Python that allow you to modify or extend the behaviour of functions or classes. They are essentially functions that take another function or class as input and return a new function or class with the modified behaviour.
 
-**FIRST-CLASS FUNCTIONS** — Python supports [first-class functions][w-firstfunc], meaning that functions can be assigned to variables, passed as arguments to other functions, and returned as values from other functions. This enables powerful [functional programming][w-functional] techniques, such as higher-order functions and closures.
+**FIRST-CLASS FUNCTIONS**
+: Python supports [first-class functions][w-firstfunc], meaning that functions can be assigned to variables, passed as arguments to other functions, and returned as values from other functions. This enables powerful [functional programming][w-functional] techniques, such as higher-order functions and closures.
 
-**MULTIPLE INHERITANCE** — Python supports multiple [inheritance][w-inheritance], allowing a class to inherit from multiple parent/base/super classes. This feature enables more complex and flexible class hierarchies, but it can also lead to potential issues such as the diamond problem if not used carefully.
+**MULTIPLE INHERITANCE** 
+: Python supports multiple [inheritance][w-inheritance], allowing a class to inherit from multiple parent/base/super classes. This feature enables more complex and flexible class hierarchies, but it can also lead to potential issues such as the diamond problem if not used carefully.
 
-**EXCEPTION HANDLING** — Python provides a comprehensive [exception handling][w-exhandler] system, allowing you to catch, handle, and raise exceptions. This system enables you to handle errors gracefully and maintain the stability of your program.
+**EXCEPTION HANDLING**
+: Python provides a comprehensive [exception handling][w-exhandler] system, allowing you to catch, handle, and raise exceptions. This system enables you to handle errors gracefully and maintain the stability of your program.
 
-**MODULES AND PACKAGES** — Python has a robust system for organizing code into modules and packages. This feature makes it easy to reuse code, manage dependencies, and distribute libraries.
+**MODULES AND PACKAGES**
+: Python has a robust system for organizing code into modules and packages. This feature makes it easy to reuse code, manage dependencies, and distribute libraries.
 
-**BATTERIES INCLUDED** — Python has a rich [standard library][p-stdlib], often referred to as ‘batteries included’. The standard library provides a wide range of functionality, such as file I/O, regular expressions, and web services, allowing you to perform many common tasks without needing to install additional packages.
+**BATTERIES INCLUDED**
+: Python has a rich [standard library][p-stdlib], often referred to as ‘batteries included’. The standard library provides a wide range of functionality, such as file I/O, regular expressions, and web services, allowing you to perform many common tasks without needing to install additional packages.
 
-**STYLE GUIDE** — Python has a widely accepted style guide called [PEP 8][pep8] that provides recommendations for writing readable and consistent code. Following PEP 8 guidelines helps maintain a uniform coding style throughout the Python community, making it easier to read and understand other people's code — *pythonic* code written by *pythonistas*.
+**CODE STYLE**
+: Python has a widely accepted style guide called [PEP 8][pep8] that provides recommendations for writing readable and consistent code. Following PEP 8 guidelines helps maintain a uniform coding style throughout the Python community, making it easier to read and understand other people's code — *pythonic* code written by *pythonistas*.
 
 <!-- &#x2757; &#x274C; &#x274E; &#x1F3C6; &#x1F40D; &#x21C9; -->
 
