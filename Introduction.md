@@ -3,7 +3,7 @@ title: Introduction
 ---
 
 [![Python logo](res/w-py-ico.svg){height=1.15em}](https://python.org "CPython Home Page")
-[Python First](https://py.1st.dev "Python First Site") contains pages covering important Python topics. The order they could be read, depends on you requirements — each page is roughly chapter length. Towards the end of many pages, more advanced material may be discussed. Beginners can safely ignore advanced material in the short term — the content can be revisited when appropriate.
+[Python First](https://py.1st.dev "Python First Site") contains pages covering important Python topics. The order they could be read, depends on you requirements — each page is roughly chapter length. Towards the end of many pages, more advanced material may be discussed. Beginners can safely ignore advanced material in the short term. Revisit the content when appropriate.
 
 [idgh-pylogo-svg]:
    res/w-py-ico.svg
@@ -129,7 +129,7 @@ From the command-line, at minimum, you should be able to:
 
 ### Terminal
 
-For a smooth experience and maximum pleasure, may we recommend at minimum a 256-colour [terminal emulator][w-term-emu], e.g., [**xterm**][w-xterm], [GNOME Terminal][w-gnome-term], [Konsole][w-konsole]; or third party. Modern examples include [iTerm2][iterm] (macOS only), [WezTerm][wezterm], [Kitty][kitty], [Alacritty][critty], and more.
+For a smooth experience and maximum pleasure, may we recommend at minimum a 256-colour [terminal emulator][w-term-emu], e.g., [xterm][w-xterm], [GNOME Terminal][w-gnome-term], [Konsole][w-konsole]; or third party. Modern examples include [iTerm2][iterm] (macOS only), [WezTerm][wezterm], [Kitty][kitty], [Alacritty][critty], and more.
 
 On Windows, you will be well-served by [Windows Terminal][w-wt] (**wt.exe**), though there are perfectly capable, and arguably better, third party terminal emulators available. The venerable [PuTTY][putty] is still viable; plus: WezTerm & Alacritty also run on Windows. The Windows Console (given relatively recent improvements) may work, but is not optimal.
 
@@ -180,11 +180,11 @@ We use some arguably ‘unusual’ conventions and Unicode characters.
 
 Syntax elements are enclosed in single left & right angle quotation marks (French *guillemets*): […]{.stx} (U+2039 & U+203A). As an example: [ident]{.stx} is a syntax specifier that means *identifier* or *name*, and [expr]{.stx} means *expression*. With that in hand, we can generalise the definition of a variable in Python:
 
-&nbsp;&nbsp;&nbsp;&nbsp; [ident]{.stx} `=` [expr]{.stx}
+[3]{.ws}[ident]{.stx} [=]{.cc} [expr]{.stx}
 
 It can also appear as follows when we think it is more readable:
 
-&nbsp;&nbsp;&nbsp;&nbsp; `‹ident› = ‹expr›`
+[3]{.ws}`‹ident› = ‹expr›`
 
 But they will still be referenced in running text as [ident]{.stx}ifier and [expr]{.stx}ession. Either way, text between guillemets ([··]{.stx}) are *descriptions* — you'll never type the text or guillemets.
 
@@ -198,13 +198,13 @@ A few characters or symbols are used as shorthand for common terms:
 
 ## Scripts & Snippets
 
-A complete Python script will always start with the following [shebang][w-shebang] (or *hash-bang*):
+A complete Python script will always start with the following [shebang][w-shebang] (or *hash-bang*) ([#!]{.cc}):
 
-[3]{.ws}`#/usr/bin/env python3`
+[3]{.ws}`#!/usr/bin/env python3`
 
 Here is an example [[hyby.py]{.cc}][src-simple-hyby.py] (“high buy period pie”) complete script:
 
-##### [`hyby.py`][src-simple-hyby.py] — Simple Python ‘Hello’ Script {.file}
+##### [`hyby.py`][src-simple-hyby.py] — Simple Python ‘Hello’ Script {#src-hyby.py .file}
 ```{.py}
 #!/usr/bin/env python3
 """Hello/Goodbye, World Example"""
@@ -212,6 +212,8 @@ Here is an example [[hyby.py]{.cc}][src-simple-hyby.py] (“high buy period pie�
 print("Hello, World!")
 print("Goodbye.")
 ```
+
+> **Note**: Sometimes, like above, the filename may be a link to the source.
 
 Code snippets (partial code), will not have a shebang line. If a code extract represents lines that belong to a larger body of code, then we will indicate that with `···`.
 
@@ -233,7 +235,7 @@ Be sure to note that complete scripts have a script *name* and description, whil
 Interactive examples in a Python [REPL][w-repl] (Read-Eval-Print-Loop), will appear in a code block, with the prompt indicated by ‘`>>`’; while continuation line prompts will start with ‘`··`’. Output will be shown either in a comment if there is space on the same line causing the output ‘`#▷…`’, or on the following line or lines.
 
 :::{.cmdline prompt='>>'}
-###### `repl` — *Python REPL example*
+###### `repl` — Python REPL example
  * `print("Hello, World!")`{.py .ws}
 [Hello, World!]{.output}
  * `print(                 #← incomplete statement`{.py .ws}
@@ -335,7 +337,7 @@ See [**Expressions**](./Expressions.md) for a more in-depth coverage of expressi
 
 ### Literals
 
-[Literals][w-literal] are explicit constant values having a particular notation as defined by the language. For example: [123]{.cc} is a [decimal][w-decimal] integer literal. The default notation is *decimal* (base 10), since we find that convenient as human beings. It is in an *integer*, because a decimal point is missing. It is a *literal*, because its value is apparent and constant.
+[Literals][w-literal] are explicit constant values having a particular notation as defined by the language. For example: [123]{.cc} is a [decimal][w-decimal] integer literal. The default notation is *decimal* (base 10), since we find that convenient as human beings. It is in an *integer*, because a decimal point, and/or exponent ([e]{.cc}), is missing. It is a *literal*, because its value is apparent and constant.
 
 Python has decided that this particular literal, has [type]{.stx}: [[int]{.cc}][p-fn-int]. You can verify this by using the [[type()]{.cc}][p-fn-type] built-in function (which is also a [type]{.stx}):
 
@@ -517,6 +519,17 @@ Well, guess we *do* endorse the following…
 [online-gdb-py]:
    https://www.onlinegdb.com/
    "Online GDB"
+
+## Other Learning Resources
+
+ * [**Think Python**][think-py] — Also allows interaction via Google Colab.
+ * [**Practical Introduction to Python**][pract-py] — A bit old, but still viable.
+
+[think-py]:
+   https://allendowney.github.io/ThinkPython/
+[pract-py]:
+   https://www.brianheinold.net/python/python_book.html
+   "Practical Introduction to Python"
 
 <!--
 # Experiments
