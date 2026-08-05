@@ -14,18 +14,18 @@ A function's [block]{.stx} must contain at least one statement, even if it is ju
 
 #### **Syntax** — *Function Definition*
 
-[3]{.ws}[[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}\
-[3]{.ws}[3]{.ws}["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}\
-[3]{.ws}[3]{.ws}[block]{.stx}
-
-[3]{.ws}[[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}\
-[3]{.ws}[3]{.ws}["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}\
-[3]{.ws}[3]{.ws}[block]{.stx}\
-[3]{.ws}[3]{.ws}[[return]{.cc}][p-st-return] [ [expr]{.stx} ]
-
-[3]{.ws}[[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [statement]{.stx}
-
-[3]{.ws}[[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [[return]{.cc}][p-st-return] [ [expr]{.stx} ]{.opt}
+> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}\
+> [3]{.ws}["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}\
+> [3]{.ws}[block]{.stx}
+>
+> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}\
+> [3]{.ws}["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}\
+> [3]{.ws}[block]{.stx}\
+> [3]{.ws}[[return]{.cc}][p-st-return] [ [expr]{.stx} ]
+>
+> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [statement]{.stx}
+>
+> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [[return]{.cc}][p-st-return] [ [expr]{.stx} ]{.opt}
 
 Unfortunately, Python does not *require* a [docstring][w-docstr], but it should be considered mandatory, and represents good programming practice when present.
 
@@ -78,7 +78,7 @@ None of these functions do anything ‘useful’, but are all syntactically comp
 
 ## Function Documentation
 
-Functions should be documented as suggested by good coding conventions. In Python, this convention involves a [[docstring]{.cc}][w-docstr], which is a string literal immediately following the function header. Using triple quotes is another convention.
+Functions should be documented as suggested by good coding conventions. In Python, this convention involves a [docstring][w-docstr], which is a string literal immediately following the function header. Using triple quotes is another convention.
 
 Docstrings are stored in the [\_\_doc\_\_]{.cc} attribute of modules, classes and functions. Tools like [[pydoc]{.cc}][p-lib-pydoc] and the built-in [[help]{.cc}][p-fn-help] function will read and format the string in [\_\_doc\_\_]{.cc}, which by default is [[None]{.cc}][p-lit-none].
 
@@ -244,12 +244,12 @@ When a function is called, the arguments can be *named*. This is referred to as 
 
 ###### `py` — Passing keyword arguments{.snip}
 ```{.py}
-three(b = "ABC", a = 123)      #← spaces around `=` are optional.
-three(a=123, b="ABC")          #← order does not matter.
+three(a = 123, b = "ABC", c = 5)  #← spaces around `=` are optional.
+three(b="ABC", c=5, a=123)        #← order does not matter.
 ```
 ```{.output}
-a = '123'; b = 'ABC'
-a = '123'; b = 'ABC'
+a = '123'; b = 'ABC'; c = 5
+a = '123'; b = 'ABC'; c = 5
 ```
 
 Note that while you can pass the first *n* arguments positionally and the rest by name, the reverse is not true: you cannot pass some arguments by name and then try and pass the remainder positionally.
@@ -305,7 +305,7 @@ def five (*parms):
     if parms:
         print("No. of parms:", len(parms))
         for i, v in enumerate(parms):
-            print("   arg #{} = '{}'".format(i + 1, v))
+            print("  parm #{} = '{}'".format(i + 1, v))
     else:
         print("No arguments passed.")
 
@@ -331,7 +331,7 @@ print("5)", end=" ");  five([11, 22], (33, 44), "ABC", "DEF")
    arg #4 = 'DEF'
 ```
 
-The [\*arg]{.cc} parameter will *consume* all arguments. Each argument becomes an item in the tuple. A function can only have one such parameter. If you have additional parameters,  they must either (a) be compulsory and precede the positional parameters, or (b) if optional, be defined last; and can only be passed as keyword arguments *after* the positional arguments. 
+The [\*parm]{.cc} parameter will *consume* all arguments. Each argument becomes an item in the tuple. A function can only have one such parameter. If you have additional parameters,  they must either (a) be compulsory and precede the positional parameters, or (b) if optional, be defined last; and can only be passed as keyword arguments *after* the positional arguments. 
 
 ###### `py` — Function with variable, and named/optional, parameters{.snip}
 ```{.py}
@@ -571,6 +571,9 @@ def foo (param):
 
 foo("argument")               #→ param locvar locfunc locclass
 ```
+```{.output}
+param locvar locfunc locclass
+```
 
 Local classes are not all that common. Local functions, on the other hand, are more numerous and useful.
 
@@ -625,14 +628,14 @@ def calc_stats(data):
       'mean': mean_val,
       'var' : variance_val,
       'sdev': stddev_val,
-      'sum' : sum(nums),
+      'sum' : sum(data),
       }
 
 data = [11, 22, 33, 44, 55, 66, 77]
 statistics = calc_stats(data)
 print(statistics)
 ```
-```
+```{.output}
 {'mean': 44.0, 'var': 484.0, 'sdev': 22.0, 'sum': 308}
 ```
 
