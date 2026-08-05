@@ -12,20 +12,22 @@ Like [assignment][p-st-assign], [[def]{.cc}][p-st-def] creates a name, and assoc
 
 A function's [block]{.stx} must contain at least one statement, even if it is just a null statement ([[pass]{.cc}][p-st-pass]), or an expression statement, which could a *docstring*.
 
-#### **Syntax** — *Function Definition*
+:::{.lines type="Syntax"}
+##### Function Definition{.lines type="Syntax"}
 
-> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}\
-> [3]{.ws}["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}\
-> [3]{.ws}[block]{.stx}
->
-> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}\
-> [3]{.ws}["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}\
-> [3]{.ws}[block]{.stx}\
-> [3]{.ws}[[return]{.cc}][p-st-return] [ [expr]{.stx} ]
->
-> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [statement]{.stx}
->
-> [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [[return]{.cc}][p-st-return] [ [expr]{.stx} ]{.opt}
+| [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}
+|      ["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}
+|      [block]{.stx}
+
+| [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc}
+|      ["""]{.cc} [[docstring][p-gl-docstring]]{.stx} ["""]{.cc}
+|      [block]{.stx}
+|      [[return]{.cc}][p-st-return] [ [expr]{.stx} ]
+
+| [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [statement]{.stx}
+
+| [[def]{.cc}][p-st-def] [ident]{.stx} [(]{.cc} [ [params]{.stx} ]{.opt} [):]{.cc} [[return]{.cc}][p-st-return] [ [expr]{.stx} ]{.opt}
+:::
 
 Unfortunately, Python does not *require* a [docstring][w-docstr], but it should be considered mandatory, and represents good programming practice when present.
 
@@ -161,7 +163,7 @@ A function that has multiple [[return]{.cc}][p-st-return] statements is shown be
    https://docs.python.org/3/reference/expressions.html#is-not
    "Python Reference — Expressions - Identity comparisons"
 
-###### `py` — Function containing multiple return statements{.snip}
+###### `py` — Function with multiple return statements{.snip}
 ```{.py}
 def foo (param):
     """
@@ -1124,7 +1126,7 @@ print(f"1) Sum = {answer}")
 answer = reduce(lambda a, b: a + b, values);  #← pass a lambda.
 print(f"2) Sum = {answer}")
 ```
-```
+```{.output}
 1) Sum = 66
 2) Sum = 66
 ```
@@ -1183,7 +1185,7 @@ Now you want to pass those values as positional arguments. One way to do this is
 ```{.py}
 five(lst[0], lst[1], lst[2])
 ```
-```
+```{.output}
 No. of args: 3
    arg #1 = '11'
    arg #2 = '22'
@@ -1196,7 +1198,7 @@ Python offers an alternative called *list argument unpacking* in the form: **\*l
 ```{.py}
 five(*lst)
 ```
-```
+```{.output}
 No. of args: 3
    arg #1 = '11'
    arg #2 = '22'
@@ -1209,7 +1211,7 @@ The [[four]{.cc}](#py-various-examples-of-passing-arguments) function above can 
 ```{.py}
 four(*lst)
 ```
-```
+```{.output}
 a = '11'; b = '22'; c = '22'
 ```
 
@@ -1405,7 +1407,8 @@ The syntax is similar to [[return]{.cc}][p-st-return], and in fact, [[yield]{.cc
    https://docs.python.org/3/library/stdtypes.html#iterator-types
    "Python Reference — Standard Types # Iterator Types"
 
-#### **`genfuncs.py`** — ***Simple Generator Functions***
+
+##### `genfuncs.py` — Simple Generator Functions{.file}
 ```{.py}
 def simpgen():
     """Simplest, semi-useful generator function."""
@@ -1646,7 +1649,6 @@ As you can see, the [decorator]{.cc} function can ‘decorate’ any function, r
 
 Sometimes, we want to pass an additional argument to the [decorator]{.cc} function. This will require a twice-nested [inner]{.cc} function.
 
-<a id="repeater.py"></a>
 ###### `py` — Decorator with an argument{.snip}
 ```{.py}
 def repeater(count):
