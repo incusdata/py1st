@@ -578,7 +578,7 @@ will be greatly reduced. Example:
 
 ## Command-Lines
 
-:::{.cmdline}
+:::{.cli}
 ###### `sh` — Individual vs collapsed options
  * [**ls**][m7-ls1] -l -a -t -r `  # individual short options`{.sh .ws}
    * `-rw-r--r--    1 brx brx   907 May 25 15:16 LICENSE`

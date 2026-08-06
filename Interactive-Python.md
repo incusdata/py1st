@@ -58,7 +58,7 @@ The first line will give you some information about the version of Python instal
 
 The `>>>` part is called a *prompt*, which indicates that Python is ready for the ‘read’ part of REPL. The `▄` shows the position of your cursor. Whatever you type now, must be legal Python syntax, but it is good to see what Python will do if you type something like [hello]{.cc} (which is not valid):
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
  * hello
 ```{.output}
 Traceback (most recent call last):
@@ -74,7 +74,7 @@ The output depends on what you entered; in the above example, we entered garbage
 
 Now we are *back* at the prompt, which means Python performed the ‘loop’ part in REPL. We can enter expressions, which the REPL will evaluate, and print the result of automatically. 
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Automatic printing of expression statements
  * ``2 + 3 * 5``{.py}
 [17]{.output}
@@ -100,7 +100,7 @@ You can now type [exit()]{.cc}[CR]{.kbd} to terminate the Python REPL — we hav
 
 A much friendlier Python REPL can be found by way of [IPython][w-ipython]. This requires the [[ipython]{.cc} package][pypi-ipython] to be installed with [[pip]{.cc}][pypi-pip], preferably in a [virtual environment][idgh-py1st-wiki-venv]. Assuming you have a virtual enviroment called [py314]{.cc} in [~/work/py314]{.cc}, first *activate* the environment, if you have not already.
 
-:::{.cmdline}
+:::{.cli}
  * ``. ~/work/py314/activate            # Non-Windows``{.sh .ws}
  * ``~/work/py314/Scripts/Activate.ps1  # PowerShell``{.ps1 .ws}
  * **``pip``** ``install ipython``{.sh .ws}
@@ -109,7 +109,7 @@ A much friendlier Python REPL can be found by way of [IPython][w-ipython]. This 
 
 If you have [uv]{.cc} installed, and created your virtual environment with [uv venv ~/work/py314]{.cc}, you activate it the same way, but install IPython with:
 
-:::{.cmdline}
+:::{.cli}
  * **``uv``** pip ``install ipython``{.sh .ws}
 :::
 
@@ -224,7 +224,7 @@ A statement must be complete and error-free before it will be successfully evalu
 
 You can explicitly continue a statement on the following line by ending a line with [\\]{.cc}[NL]{.chr} (backslash + newline). The REPL will change the prompt to a *continuation prompt*, in order to show you that the statement is not yet complete. There cannot be spaces or comments after the [\\]{.cc}.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Explicit statement continuation
  * `print("ABC`{.py}
    * `DEF`{.py}
@@ -234,7 +234,7 @@ You can explicitly continue a statement on the following line by ending a line w
 
 Between paired delimiters, excluding single and double quotes, you can continue a statement without an explicit continuation backslash. The following statement is split across three lines, producing the same output as the example above. We can even add comments:
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Delimiter statement continuation
  * ``print(                    #← first line of statement.``{.py .ws}
    * ``"ABCDEFGHI"               #← second line of statement.``{.py .ws}
@@ -244,7 +244,7 @@ Between paired delimiters, excluding single and double quotes, you can continue 
 
 One can break lines between other paired delimiters like `{}` and `[]`.
 
-::: {.cmdline prompt=">>"}
+::: {.cli prompt=">>"}
 ###### `repl` — More implicit statement continuations
 * ``L = [ 12,``{.py .ws}
   * ``       34,``{.py .ws}
@@ -266,7 +266,7 @@ The leading spaces have no syntactic meaning (*semantics*) in the above examples
 
 Python has several categories of statements, but a very common one, is the *expression statement*. It consists of any legal expression. For an expression statement to be useful, it should call a function, or modify program state.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Expression statement examples
  * ``123 + 654            #← no call, no state change.``{.py .ws}
  [ 777``                  #← REPL will print result.``{.py .ws}]{.output}
@@ -297,7 +297,7 @@ Python supports *chained assignment*, which means a single statement syntax that
 
 Any number of names can appear on the left, separated by equal signs ([=]{.cc}).
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Chained assigments
  * ``a = b = c = 123             #← a, b, and c reference `123`.``{.py .ws}
 :::
@@ -312,7 +312,7 @@ It is possible to have several names on the left of a single assignment, as long
 
 The result of the right hand [expr]{.stx}ession can be of any [type]{.stx}, as long as the type supports iteration. This is true for functions like [[range]{.cc}][p-fn-range]. Types like [[list]{.cc}][p-fn-list] and [[tuple]{.cc}][p-fn-tuple], including their literals are also iterable.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Tuple unpacking
  * ``a, b, c = 11, 22, 33         #← (tuple) a=11, b=22, c=33.``{.py .ws}
  * ``a, b, c = [ 11, 22, 33 ]     #← (list)  a=11, b=22, c=33.``{.py .ws}
@@ -329,7 +329,7 @@ As long as the [expr]{.stx}ession on the right is an *iterable* of three values,
 
 A special syntax allows *one* of the names on the left, to be prefixed with an asterisk ([\*]{.cc}). This name will always be a [[list]{.cc}][p-fn-list], and will ‘consume’ all the items on the right, that was not allocated to other names. It is possible for such a variable to be an empty list. This syntax is called *extended iterable unpacking*.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Extended iterable unpacking
  * ``*a,  b,  c = 11, 22, 33, 44  #← a=[11,22], b=33, c=44.``{.py .ws}
  * `` a, *b,  c = 11, 22, 33, 44  #← a=11, b=[22,33], c=44.``{.py .ws}
@@ -342,7 +342,7 @@ As a convenient shorthand, Python allows for the assignment's equal sign to be p
 
 [3]{.ws}[ident]{.stx} \ [op]{.stx}[=]{.cc} \ [expr]{.stx} \ \ \ \ []{.eqv} \ \ \ \ [ident]{.stx} [=]{.cc} [ident]{.stx} [op]{.stx} [expr]{.stx}
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Augmented assignments
  * ``expr = 12 ``{.py .ws}
  * ``ident1 = ident2 = 34``{.py .ws}
@@ -409,7 +409,7 @@ break    for        not
 
 All identifiers are stored in *dictionaries*. Some identifiers, like those of the built-in functions, are stored in the ‘global’ dictionary. We can inspect dictionaries with the built-in [[dir]{.cc} function][p-fn-dir].
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Built-ins name dictionary
  * ``import builtins``{.py .ws}
  * ``print( dir(builtins) )``{.py .ws}
@@ -419,7 +419,7 @@ Calling [[dir()]{.cc}][p-fn-dir] without arguments in a REPL, will show names in
 
 In the short term, ignore all names starting with double underscores that may be present in dictionaries. In the output of the following examples, we omitted those names for clarity.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Dictionary inspections
  * ``dir()                     #←only `__*` names.``{.py .ws}
  * ``X = 123                   #←add `X` to dictionary.``{.py .ws}
@@ -465,7 +465,7 @@ The term *variable* is thus a bit of a misnomer in Python. It is a convenient te
 
 A ‘variable’ (i.e., a dictionary entry), has no [type]{.stx}. The object it currently references, *does* have a [type]{.stx}. This name is only temporarily associated with or ‘has a reference to’, a value — it can be changed at any time.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Named values (identifiers) as variables
  * ``x = 123               #← associate `x` with `123`.``{.py .ws}
  * ``print( type(x) )      #▷ int``{.py .ws}
@@ -490,7 +490,7 @@ You are welcome to call ‘names’ ‘*variables*’, when you know the name re
 
 Names can be only be removed from dictionaries with the [[del]{.cc} statement][p-st-del]. The [[del]{.cc}][p-st-del] is not a built-in function. It has no return result, unlike a function, which always have a return result.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Delete names
  * ``x = 123 ; print( x )  #▷ 123``{.py .ws}
  * ``del x``{.py .ws}
@@ -518,7 +518,7 @@ Inside a Python REPL, you can request help for any [built-in][p-fn] function, [s
 
 Python has a built-in function called [[help]{.cc}][p-fn-help]. To call this function you must append the function call operator: [(&hairsp;)]{.cc} or [(]{.cc}&hairsp;[arg]{.stx}&hairsp;[)]{.cc}. For an [arg]{.stx}ument, you can enter an standard library module name, a built-in function name, or even a keyword.
 
-:::{.cmdline prompt=">>"}
+:::{.cli prompt=">>"}
 ###### `repl` — Topical help
  * `help('keywords')      #← show list of keywords.`{.py .ws}
  * `help('modules')       #← show list of standard modules.`{.py .ws}
@@ -531,7 +531,7 @@ Python has a built-in function called [[help]{.cc}][p-fn-help]. To call this fun
 
 There seems to be no simple way to get a list of [built-in functions][p-fn], but these two statements will show a list of them.
 
-:::{.cmdline prompt=">>"}
+:::{.cli prompt=">>"}
 ###### `repl` — List built-in function names
 * `import builtins as bi, inspect as it`{.py .ws}
 * `[f for f in dir(bi) if it.isbuiltin(getattr(bi, f))] #(1)`{.py .ws}
@@ -547,7 +547,7 @@ There seems to be no simple way to get a list of [built-in functions][p-fn], but
  
 When calling [[help()]{.cc}][p-fn-help] without an [arg]{.stx}ument, you will enter interactive help, which will display a message with some suggestions. The prompt will change to indicate that your are now inside an interactive help REPL. Type [quit]{.cc} to exit the interactive help, or press [Ctrl-D]{.kbd}.
 
-:::{.cmdline prompt=">>"}
+:::{.cli prompt=">>"}
 ###### `repl` — Start interactive help REPL
 * help()
 :::
@@ -555,7 +555,7 @@ When calling [[help()]{.cc}][p-fn-help] without an [arg]{.stx}ument, you will en
 This will enter a help REPL, with a different prompt. This indicates that normal Python statements and expressions are not allow; only help-specific keywords can be typed. You can, for example, get a list of [keywords][p-kwds] by entering [keywords]{.cc}[CR]{.kbd}. Any of the example above you can enter as: ‘[command]{.stx}[CR]{.kbd}’:
 
 
-:::{.cmdline prompt="help>"}
+:::{.cli prompt="help>"}
 ###### `help` — Interactive help REPL
  * keywords
  * modules
@@ -578,7 +578,7 @@ To inspect the documentation for the any [module]{.stx}, we must first [[import]
 
 To display documentation for the [[math]{.cc} module][p-m-math], as an example:
 
-:::{.cmdline prompt=">>"}
+:::{.cli prompt=">>"}
 ###### `repl` — Show math module documentation
  * `import math`{.py .ws}
  * `help(math)       #←module documentation.`{.py .ws}
@@ -610,7 +610,7 @@ The ‘\**objects*’ part means that you can pass [[print]{.cc}][p-fn-print] *a
 
 The other parameters have default values as indicated, which means they are optional. To pass them however, we must use *keyword-argument syntax*, which means me must specify the name of the parameter: [parm]{.stx}**=**[arg]{.stx}.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Print function examples
  * `print("ABC", "DEF", 123)       #▷ ABC␣DEF␣123`{.py .ws}
  * `print("ABC", 'DEF' sep='!')    #▷ ABC!DEF`{.py .ws}
@@ -622,7 +622,7 @@ By default, the output ‘[file]{.cc}’ is *standard output*. Practically, this
 
 The standard output file is represented by [[sys.stdout]{.cc}][p-sys.stdout]. You can change the default output ‘file’ of [[print]{.cc}][p-fn-print] by passing the ‘[file]{.cc}=[expr]{.stx}’ keyword argument. The most immediate use of this, is to write error messages your program produces to *standard error*, or [[sys.stderr]{.cc}][p-sys.stderr].
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Set output for print
  * `import sys`{.py .ws}
  * `print("Hello")                    #← write to sys.stdout.`{.py .ws}
@@ -632,7 +632,7 @@ The standard output file is represented by [[sys.stdout]{.cc}][p-sys.stdout]. Yo
 
 You would rarely, if ever, need to the pass the [flush]{.cc} keyword argument. The only viable option is [True]{.cc} (since the default is [False]{.cc}). Output is normally automatically flushed at the end of a line at the latest, or before any input.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Flush keyword argument
  * `print("Hello", flush=True)`{.py}
 :::
@@ -661,7 +661,7 @@ We can also perform text input using the [[input]{.cc} function][p-fn-input]. It
 
 It is possible for [[input]{.cc}][p-fn-input] to return an empty string. When [Ctrl-D]{.kbd} is pressed (or [Ctrl-Z]{.kbd}[CR]{.kbd} on Windows), it signals end-of-file ([EOF]{.chr}), and an [[EOFError]{.cc}][p-e-eof] exception will be raised.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Text input
  * `print("Name?: ", end='')         #← prompt user.`{.py .ws}
  * `name = input()                   #← wait for input.`{.py .ws}
@@ -676,7 +676,7 @@ Strings that ‘look like’ integers can be converted to strings using [[int]{.
 
 Until we have discussed exceptions in more depth, you can either ignore the possibility, or use the following pattern:
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Input error handling pattern
  * `import sys`{.py}
  * `try:`{.py}

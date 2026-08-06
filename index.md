@@ -1,6 +1,6 @@
 ---
 title: Python First
-subtitle: Repository for Python Initiate Matters
+subtitle: Place for Python Initiate Matters
 rights: Copyright © 2026 Codi Matters
 author: Codi Matters
 license: '[![CC BY-NC 4.0](res/cc-by-nc.svg)][ccbyncsa]'

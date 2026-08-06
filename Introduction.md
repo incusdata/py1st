@@ -234,7 +234,7 @@ Be sure to note that complete scripts have a script *name* and description, whil
 
 Interactive examples in a Python [REPL][w-repl] (Read-Eval-Print-Loop), will appear in a code block, with the prompt indicated by ‘`>>`’; while continuation line prompts will start with ‘`··`’. Output will be shown either in a comment if there is space on the same line causing the output ‘`#▷…`’, or on the following line or lines.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Python REPL example
  * `print("Hello, World!")`{.py .ws}
 [Hello, World!]{.output}
@@ -248,7 +248,7 @@ World!
 
 In examples involving operating system shells, the prompt will be indicated with `$>`. The rest of the conventions are from above. Where appropriate, we will indicate whether a Linux shell or PowerShell is used with: `sh` or `pwsh` respectively; when command-lines are the same in both type of shells, we will not mention anything. For Command Prompt, we will use `cmd`.
 
-:::{.cmdline prompt='$>'}
+:::{.cli prompt='$>'}
 ###### `cli` — Example command-lines for major shells
 `#━ sh (any POSIX shell like bash or zsh)`{.sh}
 
@@ -341,7 +341,7 @@ See [**Expressions**](./Expressions.md) for a more in-depth coverage of expressi
 
 Python has decided that this particular literal, has [type]{.stx}: [[int]{.cc}][p-fn-int]. You can verify this by using the [[type()]{.cc}][p-fn-type] built-in function (which is also a [type]{.stx}):
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 * `print( type(123) )`{.py}
 [\<class 'int'\>]{.output}
 :::

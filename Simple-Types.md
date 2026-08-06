@@ -83,7 +83,7 @@ We use the ‘dot operator (&hairsp;[.]{.cc}&hairsp;)’, which some other langu
 In the example Python code below, [123]{.cc} is an object of type [[int]{.cc}][p-fn-int]. The [[int]{.cc}][p-fn-int] class defines methods like [[bit_length()]{.cc}][p-tp-int-bitlen], which we can thus call ‘on the object [123]{.cc}’. We need parentheses around the [123]{.cc}, otherwise the dot operator will be confused with the decimal point. If we associated a name like [var]{.cc} to [123]{.cc}, the parentheses will not be needed.
 
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Calling a method on an int value
  * ``(123).bit_count()                #▷ 6``{.py .ws}
  * ``var = 123``{.py .ws}
@@ -100,7 +100,7 @@ Not all methods require an [obj]{.stx}ect; some are *class methods*, which means
 
 [3]{.ws}[[int]{.cc}][p-fn-int] [.]{.cc} [[from_bytes(…)]{.cc}][p-tp-int-frombyte] 
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
  * ``(123).from_bytes(b'\x02\x10', byteorder='big')  #▷528``{.py .ws}
  * ``int.from_bytes(b'\x02\x10', byteorder='big')    #▷528``{.py .ws}
 :::
@@ -132,7 +132,7 @@ Members that are not methods, are called [attributes][w-attrib]. Think of attrib
 
 So, two objects with the same type, will have the same attributes, as defined by their class, but each instance of the common attributes, may have different values. Unless a class prevents it explicitly, we can add instance attributes to any object, at any time:
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Creating instance attributes
  * ``class C: pass            #← user-defined type called `C`.``{.py .ws}
  * ``cobj = C()               #← create object and assign `cobj` name.``{.py .ws}
@@ -201,7 +201,7 @@ All the methods and attributes defined in the [**object**][p-fn-obj] class, will
 
 As all Python types inherit from [[object]{.cc}][p-tp-object], all objects will inherit a [[\_\_str\_\_]{.cc}][p-t-obj-str] method, which is what is called automatically when you use the built-in [[str(]{.cc} [object]{.stx} [)]{.cc}][p-tp-str] type function. This makes *all* Python objects convertible to strings — it even happens automatically in cases where a [[str]{.cc}][p-tp-str] is required, and the [object]{.stx} is not a [[str]{.cc}][p-tp-str]. The [[repr]{.cc}][p-fn-repr] function also can convert any object to a string.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Converting objects to strings
  * ``str(123)        #▷ '123'``{.py .ws}
  * ``str(1.23)       #▷ '1.23'``{.py .ws}
@@ -225,7 +225,7 @@ The [[repr]{.cc}][p-fn-repr] will show the output the way you would normally *re
 
 To confuse the issue of types a little more, Python has a [type]{.stx} called [[type]{.cc}][p-fn-type], which can be used to determine the type of any object passed as argument. When the result is converted to a string (automatically or explicitly), you will get the name of the type.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Determining types of objects
  * ``type(type)         #▷ <class 'type'>``{.py .ws}
  * ``type(int)          #▷ <class 'type'>``{.py .ws}
@@ -277,7 +277,7 @@ Absolutely *any* value of *any* type, can be converted to boolean. This conversi
    * [[set(&hairsp;)]{.cc}][p-fn-set] — empty sets
    * [[range(0)]{.cc}][p-fn-range] — empty ranges
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Values that converts to False
  * ``bool()                                    #▷ False``{.py .ws}
  * ``bool(0)     ; bool(0.0)    ; bool(0j)     #▷all `False`.``{.py .ws}
@@ -445,7 +445,7 @@ If your application requires [complex][w-complex] mathematics, Python has got yo
 
 A [[complex]{.cc}][p-fn-complex] object will have [real]{.cc} and [imag]{.cc}(inary) attributes.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Complex numbers examples
  * ``c = complex(3, 4)       #← 3+4i or ‘3+4j’ in Python.``{.py .ws}
  * ``c = 3+4j                #← same value, but as literal.``{.py .ws}
@@ -469,7 +469,7 @@ Programmer spend a *lot* of time manipulating [strings][w-string]. It should be 
 
 A consequence of immutability, is that none of the instance methods of type [[str]{.cc}][p-fn-str] will be able to modify the original string — but will return a *new* copy of the string with possible modifications applied.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — String immutability demo
  * ``s = "abcdef"``{.py .ws}
  * ``s.upper()                  #← does not change `s`.``{.py .ws}
@@ -484,7 +484,7 @@ Python can support several string [encodings][w-chr-enc], but the internal and d
 
 Python also supports *byte strings* of type [[bytes]{.cc}][p-fn-bytes], which are not treated as UTF-8, but is useful when converting to/from UTF-8 and some other encoding. Python makes it simple to work with strings — most of the time, it ‘just works’.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — String encoding and UTF-8
  * ``string = 'Hello, World!'          #← internal representation.``{.py .ws}
  * ``encoded = string.encode('utf-8')``{.py .ws}
@@ -502,7 +502,7 @@ The [[str]{.cc}][p-fn-str] class defines *many* string-manipulation functions. S
 
 Two major [[re]{.cc}][p-lib-re] methods are [[match()]{.cc}][p-lib-re-match] which matches a pattern at the *beginning* of a string, and [[search()]{.cc}][p-lib-re-search] tries to match *anywhere* in the string.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Regular expressions and re module
  * ``import re``{.py .ws}
  * ``print(re.match("ABC", "ABCDEFG"))``{.py .ws}
@@ -540,7 +540,7 @@ The **`%`** overloaded operator is inspired by the C [[printf]{.cc}][w-c-printf]
 
 [3]{.ws}["]{.cc}…[%]{.cc}[specifier]{.stx}…["]{.cc} &nbsp; [%]{.cc} &nbsp; [expr]{.stx}
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
  * ``name = "ABC"``{.py .ws}
  * ``age = 123``{.py .ws}
  * ``result = "Name: %s (%dy)" % (name, age)``{.py .ws}
@@ -556,7 +556,7 @@ The [[str]{.cc}][p-fn-str][.]{.cc}[[format]{.cc}][p-tp-str-fmt] method also has 
 
 [3]{.ws}["]{.cc}…[{&hairsp;}]{.cc}…[".format(]{.cc} [expr]{.stx} [)]{.cc}
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — String formatting method
  * ``name = "ABC"``{.py .ws}
  * ``age = 123``{.py .ws}
@@ -572,7 +572,7 @@ The [[str]{.cc}][p-fn-str][.]{.cc}[[format]{.cc}][p-tp-str-fmt] method also has 
 
 The Python 3.6 formatted string literals allows for a more compact syntax compared to the [format method above](#format-method). It is less error-prone and highly recommended. The big difference is that strings must start with an [f]{.cc} prefix, and that inside the curly braces, any [expr]{.stx}ession can appear — this is called [string interpolation][w-str-inter] in many languages.
 
-:::{.cmdline prompt='>>'}
+:::{.cli prompt='>>'}
 ###### `repl` — Formatted string literals{#repl-f-strings}
  * ``name = "ABC"``{.py .ws}
  * ``age = 123``{.py .ws}
