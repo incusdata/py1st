@@ -8,6 +8,7 @@ template: landing
 page-summaries: true
 nav: false
 hero-image: res/py1st-cut.svg
+hero-image-asis: true
 hero-image-alt: Python First
 hero-image-href: Introduction.html
 abstract: |

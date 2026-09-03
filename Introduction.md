@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-[![Python logo](res/w-py-ico.svg){height=1.15em}](https://python.org "CPython Home Page")
+[![Python logo](res/w-py-ico.svg){.asis height=1.0em}](https://python.org "CPython Home Page")
 [Python First](https://py.1st.dev "Python First Site") contains pages covering important Python topics. The order they could be read, depends on you requirements — each page is roughly chapter length. Towards the end of many pages, more advanced material may be discussed. Beginners can safely ignore advanced material in the short term. Revisit the content when appropriate.
 
 [idgh-pylogo-svg]:
